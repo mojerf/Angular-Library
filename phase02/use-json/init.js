@@ -12,13 +12,8 @@ async function fetchData() {
     }
 }
 
-(async () => {
+async function renderBooks () {
     const data = await fetchData();
-    renderBooks(data)
-})();
-
-
-function renderBooks (data) {
     const article = document.querySelector('article');
     data.forEach(element => {
         const book = document.createElement('div');
@@ -38,3 +33,4 @@ function renderBooks (data) {
 
     });
 }
+renderBooks ()
