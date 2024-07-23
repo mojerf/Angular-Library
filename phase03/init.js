@@ -25,9 +25,9 @@ async function renderBooks () {
         author.textContent = element.author;
         image.src = element.image;
         
+        book.appendChild(image);
         book.appendChild(title);
         book.appendChild(author);
-        book.appendChild(image);
 
         article.appendChild(book);
 
