@@ -97,6 +97,7 @@ article .book .info-container .info .small-desc > p {
   display: block;
   margin: 0;
   margin-top: 0.5rem;
+  color: #222;
   font-weight: bold;
 }
 @media only screen and (max-width: 600px) {
@@ -106,6 +107,7 @@ article .book .info-container .info .small-desc > p {
 }
 article .book .info-container .info .small-desc > span {
   display: block;
+  color: #333;
 }
 @media only screen and (max-width: 600px) {
   article .book .info-container .info .small-desc > span {
