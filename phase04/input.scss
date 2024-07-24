@@ -26,10 +26,8 @@ body {
     background-color: #fafafa;
     .container{
         padding: 1rem 5rem;
-        @media only screen and (max-width: 530px) {
-            body>div{
-                padding: 1rem 1rem;
-            }
+        @media only screen and (max-width: 600px) {
+            padding: 1rem 3rem;
         }
     }
 }
@@ -37,27 +35,41 @@ body {
 article {
     @include center-items;
     flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: row;
+    gap: 3rem;
     .book{
         @include center-items;
-        margin: 1rem;
-        width: 500px;
+        @media only screen and (max-width: 600px) {
+            flex-wrap: wrap;
+        }
+        width: 30rem;
         .image-container{
             width: 100%;
-            z-index: 0;
+            @media only screen and (max-width: 600px) {
+                width: 60%;
+            }
+            @media only screen and (max-width: 600px) {
+                z-index: 0;
+            }
+            z-index: 2;
             img{
-                @include rounded;
+                @media only screen and (max-width: 600px) {
+                    border-radius: 0.5rem 0.5rem 0 0;
+                }
+                @include rounded();
                 @include small-shadow;
                 width: 100%;
             }
         }
         .info-container{
             @include center-items;
-            margin-left: -1rem;
             width: 100%;
             z-index: 1;
             .info {
-                @include rounded;
+                @media only screen and (max-width: 600px) {
+                    @include rounded();
+                }
+                border-radius: 0 0.5rem 0.5rem 0;
                 @include small-shadow;
                 padding: 1.5rem;
                 background-color: white;
@@ -65,16 +77,37 @@ article {
                 .title{
                     @include bold;
                     font-size: 1.5rem;
-                    margin-bottom: 1rem;
-                    margin-top: 0;
+                    margin: 0;
                     text-align: center;
                 }
-                .small-title{
+                hr{
+                    border:dashed 1px #ccc;
+                    margin: 1rem 0;
+                }
+                .small-desc{
+                    display: block;
+                    
+                }
+                .small-desc>p{
+                    display: block;
                     margin: 0;
                     margin-top: .5rem;
                     @include bold;
+                    @media only screen and (max-width: 600px) {
+                        display: inline-block;
+                    }
+                }
+                .small-desc>span{
+                    display: block;
+                    @media only screen and (max-width: 600px) {
+                        display: inline-block;
+                    }
                 }
             }
         }
     }
+}
+
+.small-desc{
+    display: inline-block;
 }

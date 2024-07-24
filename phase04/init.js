@@ -19,10 +19,11 @@ async function renderBooks () {
         const book = document.createElement('div');
         const descriptionContainer = document.createElement('div')
         const bookName = document.createElement('h3');
-        const author = document.createElement('span');
-        const price = document.createElement('span');
-        const genre = document.createElement('span');
-        const publishDate = document.createElement('span');
+        const divider = document.createElement('hr');
+        const author = document.createElement('div');
+        const price = document.createElement('div');
+        const genre = document.createElement('div');
+        const publishDate = document.createElement('div');
         const image = document.createElement('img');
         const imageContainer = document.createElement('div');
         const infoContainer = document.createElement('div');
@@ -30,44 +31,41 @@ async function renderBooks () {
         const priceTitle = document.createElement('p')
         const genreTitle = document.createElement('p')
         const dateTitle = document.createElement('p')
+        const authorValue = document.createElement('span');
+        const priceValue = document.createElement('span');
+        const genreValue = document.createElement('span');
+        const publishDateValue = document.createElement('span');
         
         bookName.textContent = element.name;
-        author.textContent = element.author;
-        price.textContent = `$${element.price}`;
-        genre.textContent = element.genre;
-        publishDate.textContent = element.publishData;
+        authorValue.textContent = element.author;
+        priceValue.textContent = `$${element.price}`;
+        genreValue.textContent = element.genre;
+        publishDateValue.textContent = element.publishData;
         image.src = element.image;
-        authorTitle.textContent = 'Author :';
-        priceTitle.textContent = 'Price :';
-        genreTitle.textContent = 'Genre :';
-        dateTitle.textContent = 'Publish Date :';
+        authorTitle.textContent = 'Author : ';
+        priceTitle.textContent = 'Price : ';
+        genreTitle.textContent = 'Genre : ';
+        dateTitle.textContent = 'Publish Date : ';
 
         descriptionContainer.className = 'info'
         bookName.className = 'title'
-        author.className = 'author'
-        price.className = 'price'
-        genre.className = 'genre'
-        publishDate.className = 'date'
+        author.className = 'author small-desc'
+        price.className = 'price small-desc'
+        genre.className = 'genre small-desc'
+        publishDate.className = 'date small-desc'
         image.className = 'book-image'
         book.className = 'book'
         infoContainer.className = 'info-container'
         imageContainer.className = 'image-container'
-        authorTitle.className = 'small-title';
-        priceTitle.className = 'small-title';
-        genreTitle.className = 'small-title';
-        dateTitle.className = 'small-title';
+
+        author.append(authorTitle , authorValue);
+        price.append(priceTitle, priceValue)
+        genre.append(genreTitle , genreValue)
+        publishDate.append(dateTitle,publishDateValue)
         
         imageContainer.appendChild(image)
         book.appendChild(imageContainer);
-        descriptionContainer.appendChild(bookName);
-        descriptionContainer.appendChild(authorTitle);
-        descriptionContainer.appendChild(author);
-        descriptionContainer.appendChild(priceTitle);
-        descriptionContainer.appendChild(price);
-        descriptionContainer.appendChild(genreTitle);
-        descriptionContainer.appendChild(genre);
-        descriptionContainer.appendChild(dateTitle);
-        descriptionContainer.appendChild(publishDate);
+        descriptionContainer.append(bookName,divider,author,price,genre,publishDate)
         infoContainer.appendChild(descriptionContainer);
         book.appendChild(infoContainer)
 
@@ -76,4 +74,4 @@ async function renderBooks () {
     });
 }
 
-renderBooks ()
+renderBooks()
