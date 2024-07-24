@@ -1,21 +1,32 @@
-async function fetchData() {
-    const url = 'https://raw.githubusercontent.com/Star-Academy/codestar-documents/master/static/datasets/books.json';
+interface Book{
+    name : string,
+    image : string,
+    genre : string,
+    author : string,
+    publishData: string,
+    price : number,
+
+}
+
+async function fetchData() : Promise<Book[] | undefined> {
+    const url : string = 'https://raw.githubusercontent.com/Star-Academy/codestar-documents/master/static/datasets/books.json';
     try {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const data = await response.json();
+        const data : Book[] = await response.json();
         return data;
     } catch (error) {
-        console.error('Failed to fetch the JSON file:', error);
+        console.error('Failed to fetch the JSON file:', error); 
     }
 }
 
 async function renderBooks () {
     const data = await fetchData();
-    const article = document.querySelector('article');
-    data.forEach(element => {
+    const article = document.querySelector('article') as HTMLElement;
+    if(data){
+    data.forEach(function(element : Book ) {
         const book = document.createElement('div');
         const descriptionContainer = document.createElement('div')
         const bookName = document.createElement('h3');
@@ -71,7 +82,7 @@ async function renderBooks () {
 
         article.appendChild(book);
 
-    });
+    });}
 }
 
 renderBooks()
