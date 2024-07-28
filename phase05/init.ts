@@ -3,28 +3,39 @@ interface Book{
     image : string,
     genre : string,
     author : string,
-    publishData: string,
+    publishData : string,
     price : number,
 }
 
-async function fetchData() : Promise<Book[] | undefined> {
+function showError(message:string):void {
+    const article = document.querySelector('article') as HTMLElement;
+    const messageBox: HTMLElement = document.createElement('div');
+    messageBox.className = 'message-box';
+    messageBox.textContent = message;
+    article.appendChild(messageBox);
+}
+
+async function fetchData() : Promise<Book[]> {
     const url : string = 'https://raw.githubusercontent.com/Star-Academy/codestar-documents/master/static/datasets/books.json';
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            showError(`HTTP error! status: ${response.status}`);
         }
         const data : Book[] = await response.json();
         return data;
     } catch (error) {
-        console.error('Failed to fetch the JSON file:', error); 
+        showError(`Failed to fetch the JSON file: ${error}`);
     }
+    return []   
 }
 
 async function renderBooks () {
     const data = await fetchData();
     const article = document.querySelector('article') as HTMLElement;
-    if(data){
+    if(!data.length){
+        showError('No Books found!');
+    }
     data.forEach(function(element : Book ) {
         const book = document.createElement('div');
         const descriptionContainer = document.createElement('div')
@@ -81,7 +92,7 @@ async function renderBooks () {
 
         article.appendChild(book);
 
-    });}
+    });
 }
 
 renderBooks()
