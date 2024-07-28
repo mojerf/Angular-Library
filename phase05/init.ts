@@ -5,7 +5,6 @@ interface Book{
     author : string,
     publishData: string,
     price : number,
-
 }
 
 async function fetchData() : Promise<Book[] | undefined> {
