@@ -1,3 +1,4 @@
 <div class="container">
-  @for (book of booksList; track book.name) { <book [bookSpec]="book" /> }
+  @for (book of booksList; track book.name) {
+  <book class="book" [bookSpec]="book" /> }
 </div>

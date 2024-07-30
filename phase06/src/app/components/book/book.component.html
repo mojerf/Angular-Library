@@ -1,8 +1,6 @@
-<div class="book">
-  <div class="image-container">
-    <img src="{{ bookSpec.image }}" alt="book-image" />
-  </div>
-  <div class="details-container">
-    <book-details [bookDetails]="bookSpec" />
-  </div>
+<div class="image-container">
+  <img src="{{ bookSpec.image }}" alt="book-image" />
+</div>
+<div class="details-container">
+  <book-details [bookDetails]="bookSpec" class="grid" />
 </div>

@@ -1,0 +1,31 @@
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 1rem 0;
+  font-size: 1.75rem;
+}
+
+.genre-container {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.badge {
+  border: 1px solid #333;
+  color: #333;
+  padding: 0.3rem 0.7rem;
+  display: inline-block;
+  border-radius: 3rem;
+}
+
+.author {
+  color: #555;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.price {
+  margin: 2rem 0;
+  font-weight: bold;
+}

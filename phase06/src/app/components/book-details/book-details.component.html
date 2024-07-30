@@ -1,2 +1,7 @@
-<h1>{{ bookDetails.name }}!</h1>
-<p>{{ bookDetails.price }}</p>
+<h3 class="title">{{ bookDetails.name }}!</h3>
+<p class="author">{{ bookDetails.author }}</p>
+<p class="price">${{ bookDetails.price }}</p>
+<div class="genre-container">
+  <span class="badge">{{ bookDetails.genre[0] }}</span>
+  <span class="badge">+{{ bookDetails.genre.length - 1 }}</span>
+</div>
