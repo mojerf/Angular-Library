@@ -1,6 +1,6 @@
-<div class="image-container">
-  <img src="{{ bookSpec.image }}" alt="book-image" />
-</div>
-<div class="details-container">
-  <book-details [bookDetails]="bookSpec" class="grid" />
-</div>
+<mat-card class="book-card" appearance="raised">
+  <img mat-card-image src="{{ bookSpec.image }}" alt="Photo of a Shiba Inu" />
+  <mat-card-content>
+    <book-details [bookDetails]="bookSpec" class="grid" />
+  </mat-card-content>
+</mat-card>
