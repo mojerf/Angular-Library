@@ -10,7 +10,7 @@ export class FetchBooksService {
   protected books: Book[] = [
     {
       name: 'The Midnight Library',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/17400000/17418781.webp  ',
       genre: ['Fiction', 'Fantasy'],
       author: 'Matt Haig',
       publishData: '2020-08-13',
@@ -18,7 +18,7 @@ export class FetchBooksService {
     },
     {
       name: 'Dune',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/17900000/17941113.webp',
       genre: ['Science Fiction', 'Adventure'],
       author: 'Frank Herbert',
       publishData: '1965-08-01',
@@ -26,7 +26,8 @@ export class FetchBooksService {
     },
     {
       name: 'To Kill a Mockingbird',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://s2982.pcdn.co/wp-content/uploads/2015/07/To-Kill-a-Mockingbird-School-Edition-200x300.jpg.optimal.jpg',
       genre: ['Fiction', 'Classic'],
       author: 'Harper Lee',
       publishData: '1960-07-11',
@@ -34,7 +35,7 @@ export class FetchBooksService {
     },
     {
       name: '1984',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/17000000/17094734.webp',
       genre: ['Dystopian', 'Science Fiction'],
       author: 'George Orwell',
       publishData: '1949-06-08',
@@ -42,7 +43,8 @@ export class FetchBooksService {
     },
     {
       name: 'The Great Gatsby',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://www.aliceandbooks.com/covers/The_Great_Gatsby-F._Scott_Fitzgerald-md.png',
       genre: ['Fiction', 'Classic'],
       author: 'F. Scott Fitzgerald',
       publishData: '1925-04-10',
@@ -50,7 +52,8 @@ export class FetchBooksService {
     },
     {
       name: "Harry Potter and the Philosopher's Stone",
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://s2.adlibris.com/images/12221794/harry-potter-and-the-philosophers-stone.jpg',
       genre: ['Fantasy', 'Young Adult'],
       author: 'J.K. Rowling',
       publishData: '1997-06-26',
@@ -58,7 +61,8 @@ export class FetchBooksService {
     },
     {
       name: 'The Catcher in the Rye',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://s26162.pcdn.co/wp-content/uploads/sites/2/2018/07/the-catcher-in-the-rye-book-cover-movie-poster-art-3-nishanth-gopinathan-200x300.jpg',
       genre: ['Fiction', 'Coming-of-age'],
       author: 'J.D. Salinger',
       publishData: '1951-07-16',
@@ -66,7 +70,8 @@ export class FetchBooksService {
     },
     {
       name: 'Pride and Prejudice',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://cdn.dribbble.com/users/959147/screenshots/7194219/jane_austen_pride_and_prejudice2a_pd_1x.jpg',
       genre: ['Romance', 'Classic'],
       author: 'Jane Austen',
       publishData: '1813-01-28',
@@ -74,7 +79,8 @@ export class FetchBooksService {
     },
     {
       name: 'The Hobbit',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://www.noor-book.com/publice/covers_cache_webp/15/e/a/7/0f1ca54395ea781c7f5f3289f7621345.jpg.webp',
       genre: ['Fantasy', 'Adventure'],
       author: 'J.R.R. Tolkien',
       publishData: '1937-09-21',
@@ -82,7 +88,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Da Vinci Code',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/17300000/17395110.webp',
       genre: ['Thriller', 'Mystery'],
       author: 'Dan Brown',
       publishData: '2003-03-18',
@@ -90,7 +96,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Alchemist',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/18000000/18070711.webp',
       genre: ['Fiction', 'Philosophy'],
       author: 'Paulo Coelho',
       publishData: '1988-01-01',
@@ -98,7 +104,8 @@ export class FetchBooksService {
     },
     {
       name: 'Brave New World',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://ffeu.yasar.edu.tr/wp-content/uploads/2021/08/brave-new-world-visual-1-1-200x300.jpg',
       genre: ['Science Fiction', 'Dystopian'],
       author: 'Aldous Huxley',
       publishData: '1932-01-01',
@@ -106,7 +113,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Hunger Games',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/17700000/17773447.webp',
       genre: ['Young Adult', 'Science Fiction'],
       author: 'Suzanne Collins',
       publishData: '2008-09-14',
@@ -114,7 +121,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Shining',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/17100000/17157160.webp',
       genre: ['Horror', 'Thriller'],
       author: 'Stephen King',
       publishData: '1977-01-28',
@@ -122,7 +129,8 @@ export class FetchBooksService {
     },
     {
       name: 'The Girl with the Dragon Tattoo',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://i0.wp.com/geoffwhaley.com/wp-content/uploads/2011/12/larsson-stieg-the-girl-with-the-dragon-tattoo.jpg?resize=200%2C300',
       genre: ['Crime', 'Mystery'],
       author: 'Stieg Larsson',
       publishData: '2005-08-01',
@@ -130,7 +138,8 @@ export class FetchBooksService {
     },
     {
       name: "The Hitchhiker's Guide to the Galaxy",
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://www.nicksenger.com/blog/wp-content/uploads/2007/11/The_Hitchhikers_Guide_to_the_Galaxy-200x300.jpg',
       genre: ['Science Fiction', 'Comedy'],
       author: 'Douglas Adams',
       publishData: '1979-10-12',
@@ -138,7 +147,8 @@ export class FetchBooksService {
     },
     {
       name: 'The Kite Runner',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://developmenteducation.ie/wp-content/uploads/2017/02/deved_1342703058.jpg',
       genre: ['Fiction', 'Historical'],
       author: 'Khaled Hosseini',
       publishData: '2003-05-29',
@@ -146,7 +156,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Martian',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://static.bookofthemonth.com/covers/list/TheMartian.jpg',
       genre: ['Science Fiction', 'Adventure'],
       author: 'Andy Weir',
       publishData: '2011-09-27',
@@ -154,7 +164,8 @@ export class FetchBooksService {
     },
     {
       name: "The Handmaid's Tale",
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://d3525k1ryd2155.cloudfront.net/f/296/346/9780358346296.IN.0.m.jpg',
       genre: ['Dystopian', 'Speculative Fiction'],
       author: 'Margaret Atwood',
       publishData: '1985-06-14',
@@ -162,7 +173,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Fault in Our Stars',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/14200000/14265868.webp',
       genre: ['Young Adult', 'Romance'],
       author: 'John Green',
       publishData: '2012-01-10',
@@ -170,7 +181,7 @@ export class FetchBooksService {
     },
     {
       name: 'Sapiens: A Brief History of Humankind',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/17900000/17924753.webp',
       genre: ['Non-fiction', 'History'],
       author: 'Yuval Noah Harari',
       publishData: '2011-01-01',
@@ -178,7 +189,8 @@ export class FetchBooksService {
     },
     {
       name: 'The Lord of the Rings',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://d3525k1ryd2155.cloudfront.net/f/027/129/9780618129027.IN.0.m.jpg',
       genre: ['Fantasy', 'Epic'],
       author: 'J.R.R. Tolkien',
       publishData: '1954-07-29',
@@ -186,7 +198,8 @@ export class FetchBooksService {
     },
     {
       name: 'Becoming',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://openlibrary.telkomuniversity.ac.id/uploads/book/cover/24.74.018.jpg',
       genre: ['Non-fiction', 'Autobiography'],
       author: 'Michelle Obama',
       publishData: '2018-11-13',
@@ -194,7 +207,8 @@ export class FetchBooksService {
     },
     {
       name: 'One Hundred Years of Solitude',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://s26162.pcdn.co/wp-content/uploads/2017/04/One-Hundred-Years-of-Solitude-2-200x300.jpg',
       genre: ['Magical Realism', 'Literary Fiction'],
       author: 'Gabriel García Márquez',
       publishData: '1967-05-30',
@@ -202,7 +216,8 @@ export class FetchBooksService {
     },
     {
       name: 'The Silent Patient',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY7ET_UbmbJOgyUJWLiJ2HIy88BTqke53Ieg&s',
       genre: ['Thriller', 'Mystery'],
       author: 'Alex Michaelides',
       publishData: '2019-02-05',
@@ -210,7 +225,8 @@ export class FetchBooksService {
     },
     {
       name: 'The Catcher in the Rye',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://s26162.pcdn.co/wp-content/uploads/sites/2/2018/07/the-catcher-in-the-rye-book-cover-movie-poster-art-3-nishanth-gopinathan-200x300.jpg',
       genre: ['Fiction', 'Coming-of-age'],
       author: 'J.D. Salinger',
       publishData: '1951-07-16',
@@ -218,7 +234,7 @@ export class FetchBooksService {
     },
     {
       name: 'Educated',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/14200000/14213321.webp',
       genre: ['Non-fiction', 'Memoir'],
       author: 'Tara Westover',
       publishData: '2018-02-20',
@@ -226,7 +242,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Pillars of the Earth',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://rosannelortz.com/wp-content/uploads/2010/08/pillars.jpg',
       genre: ['Historical Fiction', 'Epic'],
       author: 'Ken Follett',
       publishData: '1989-10-01',
@@ -234,7 +250,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Immortal Life of Henrietta Lacks',
-      image: 'https://picsum.photos/200/300',
+      image: 'https://z-lib.io/images/17600000/17673633.webp',
       genre: ['Non-fiction', 'Science'],
       author: 'Rebecca Skloot',
       publishData: '2010-02-02',
@@ -242,7 +258,8 @@ export class FetchBooksService {
     },
     {
       name: 'The name of the Wind',
-      image: 'https://picsum.photos/200/300',
+      image:
+        'https://www.fantasybookreview.co.uk/book-covers/the-name-of-the-wind.jpg',
       genre: ['Fantasy', 'Adventure'],
       author: 'Patrick Rothfuss',
       publishData: '2007-03-27',
