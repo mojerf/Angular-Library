@@ -22,6 +22,8 @@ export class AddBookFormComponent {
     author: new FormControl(''),
   });
 
+  constructor() {}
+
   handleSubmit() {
     this.createService.createBook(this.newBookForm);
   }

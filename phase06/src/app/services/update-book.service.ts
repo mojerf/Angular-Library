@@ -7,9 +7,11 @@ import { Book } from '../interfaces/book.interface';
 export class UpdateBookService {
   constructor() {}
 
-  updateBook(info: Book) {
+  updateBook(bookName: string, info: any) {
+    console.log(info);
+
     const bookList = JSON.parse(localStorage.getItem('books') as string);
-    const book: Book = bookList.find((book: Book) => book.name === info.name);
+    const book: Book = bookList.find((book: Book) => book.name === bookName);
 
     book.name = info.name;
     book.author = info.author;

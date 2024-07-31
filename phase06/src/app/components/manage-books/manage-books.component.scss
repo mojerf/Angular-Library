@@ -1,0 +1,29 @@
+@use "@angular/material" as mat;
+$theme: mat.define-theme();
+
+.demo-table {
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.demo-button-container {
+  padding-bottom: 16px;
+}
+
+.demo-button + .demo-button {
+  margin-left: 8px;
+}
+
+img {
+  height: 100px;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+}
+
+.error-icon {
+  @include mat.icon-color($theme, $color-variant: error);
+}
+
+mat-icon {
+  cursor: pointer;
+}
