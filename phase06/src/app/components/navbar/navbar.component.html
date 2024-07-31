@@ -1,22 +1,14 @@
 <nav class="navbar">
   <div class="links-container">
-    <p>Categories</p>
-    <p>About</p>
-    <p>Categories</p>
+    <a mat-button href="#">Home</a>
+    <a mat-button href="#">Manage Books</a>
   </div>
   <div class="logo-container">
-    <h1>Book Foroshi</h1>
+    <h1><mat-icon class="logo-icon"> menu_book </mat-icon></h1>
   </div>
-  <div class="search-container">
-    <input
-      type="text"
-      placeholder="🔍 Search... "
-      style="
-        border: 1px solid black;
-        padding: 0.5rem;
-        border-radius: 2rem;
-        width: 300px;
-      "
-    />
-  </div>
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
+    <mat-label>Search...</mat-label>
+    <input matInput />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
 </nav>

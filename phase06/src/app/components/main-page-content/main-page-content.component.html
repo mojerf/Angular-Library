@@ -1,4 +1,10 @@
 <div class="container">
+  <h2 style="display: block; width: 100%">Most Popular</h2>
   @for (book of booksList; track book.name) {
-  <book class="book" [bookSpec]="book" /> }
+  <horizontal-book [bookSpec]="book" /> }
+</div>
+
+<div class="container">
+  @for (book of booksList; track book.name) {
+  <vertical-book [bookSpec]="book" /> }
 </div>

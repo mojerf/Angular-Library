@@ -6,9 +6,23 @@ import { Book } from '../interfaces/book.interface';
   providedIn: 'root',
 })
 export class LoadBooksService {
-  constructor(private fetchBooks: FetchBooksService) {}
+  books: Book[];
+  constructor(private fetchBooks: FetchBooksService) {
+    this.books = this.fetchBooks.getAllBooks();
+  }
 
   getBooks(): Book[] {
-    return this.fetchBooks.getAllBooks();
+    return this.books;
+  }
+
+  getRandomBook(howMany: number) {
+    const randomBooks: Book[] = [];
+    for (let i = 0; i < howMany; i++) {
+      randomBooks.push(
+        this.books[Math.floor(Math.random() * this.books.length)]
+      );
+    }
+    console.log(randomBooks);
+    return randomBooks;
   }
 }

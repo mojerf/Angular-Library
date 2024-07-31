@@ -1,11 +1,23 @@
 .navbar {
-  border-bottom: 1px solid #888;
+  box-shadow: var(--mdc-elevated-card-container-elevation);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 1rem;
 }
 
 .links-container {
   display: flex;
   gap: 1rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+.logo-icon {
+  font-size: 65px;
+  width: 65px;
+  height: 65px;
+  color: #08315c;
 }
