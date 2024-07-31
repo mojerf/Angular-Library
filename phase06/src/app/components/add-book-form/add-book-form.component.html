@@ -1,0 +1,21 @@
+<form [formGroup]="newBookForm" (ngSubmit)="handleSubmit()">
+  <label for="name">name</label>
+  <input type="text" formControlName="name" id="name" />
+  <br />
+  <label for="image">image</label>
+  <input type="text" formControlName="image" id="image" />
+  <br />
+  <label for="author">author</label>
+  <input type="text" formControlName="author" id="author" />
+  <br />
+  <label for="publishData">Publish Date</label>
+  <input type="text" formControlName="publishData" id="publishData" />
+  <br />
+  <label for="genre">genre ( seperate using comma -> x,y,z )</label>
+  <input type="text" formControlName="genre" id="genre" />
+  <br />
+  <label for="price">price</label>
+  <input type="number" formControlName="price" id="price" />
+  <br />
+  <button type="submit">add book</button>
+</form>

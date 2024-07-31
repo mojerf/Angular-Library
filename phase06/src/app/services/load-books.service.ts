@@ -29,4 +29,10 @@ export class LoadBooksService {
     }
     return randomBooks;
   }
+
+  getBookByName(name: string): any {
+    return this.books.find(
+      (book) => book.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+    );
+  }
 }

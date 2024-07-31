@@ -1,15 +1,55 @@
 img {
   border-radius: inherit;
+  width: 97%;
+
+  -webkit-filter: grayscale(0) blur(0);
+  filter: grayscale(0) blur(0);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  opacity: 1;
 }
 
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+a:hover .middle {
+  opacity: 1 !important;
+}
+
+.text {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+a {
+  background-color: #191919;
+  position: relative;
+}
+
+a:hover img {
+  -webkit-filter: grayscale(100%) blur(1px);
+  filter: grayscale(100%) blur(1px);
+  opacity: 0.5;
+}
+
+.image-link {
+  border-radius: inherit;
+}
 .details-container {
   width: 100%;
 }
-
 .grid {
   display: grid;
 }
-
 .book-card {
   width: 100%;
 }

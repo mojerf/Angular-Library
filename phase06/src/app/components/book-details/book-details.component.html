@@ -1,4 +1,6 @@
-<h3 class="title">{{ bookDetails.name }}!</h3>
+<a class="title" [routerLink]="['/book', bookDetails.name]">
+  {{ bookDetails.name }}!
+</a>
 <p class="author">{{ bookDetails.author }}</p>
 <p class="price">${{ bookDetails.price }}</p>
 <div class="genre-container">

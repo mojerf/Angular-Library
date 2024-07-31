@@ -1,7 +1,19 @@
 <nav class="navbar">
   <div class="links-container">
-    <a mat-button href="#">Home</a>
-    <a mat-button href="#">Manage Books</a>
+    <a
+      mat-button
+      routerLink=""
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >Home</a
+    >
+    <a
+      mat-button
+      routerLink="/manage-books"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >Manage Books</a
+    >
   </div>
   <div class="logo-container">
     <h1><mat-icon class="logo-icon"> menu_book </mat-icon></h1>
