@@ -8,8 +8,12 @@ import { Book } from '../interfaces/book.interface';
 export class LoadBooksService {
   books: Book[];
   constructor(private fetchBooks: FetchBooksService) {
-    const data = window.localStorage.getItem('books') as string;
-    this.books = JSON.parse(data);
+    if (window.localStorage.getItem('books')) {
+      const data = window.localStorage.getItem('books') as string;
+      this.books = JSON.parse(data);
+    } else {
+      this.books = fetchBooks.getAllBooks();
+    }
   }
 
   getBooks(): Book[] {
@@ -23,7 +27,6 @@ export class LoadBooksService {
         this.books[Math.floor(Math.random() * this.books.length)]
       );
     }
-    console.log(randomBooks);
     return randomBooks;
   }
 }
