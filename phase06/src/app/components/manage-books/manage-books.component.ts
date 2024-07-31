@@ -6,11 +6,18 @@ import { Book } from '../../interfaces/book.interface';
 import { MatIconModule } from '@angular/material/icon';
 import { DeleteBookService } from '../../services/delete-book.service';
 import { RouterLink } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-manage-books',
   standalone: true,
-  imports: [MatButtonModule, MatTableModule, RouterLink, MatIconModule],
+  imports: [
+    MatButtonModule,
+    MatTableModule,
+    RouterLink,
+    MatIconModule,
+    MatTooltipModule,
+  ],
   templateUrl: './manage-books.component.html',
   styleUrl: './manage-books.component.scss',
 })
@@ -24,8 +31,8 @@ export class ManageBooksComponent {
   }
 
   displayedColumns: string[] = [
-    'name',
     'image',
+    'name',
     'genre',
     'author',
     'publishData',

@@ -11,7 +11,9 @@
   <ng-container matColumnDef="image">
     <th mat-header-cell *matHeaderCellDef>Image</th>
     <td mat-cell *matCellDef="let element">
-      <img src="{{ element.image }}" alt="" />
+      <a [routerLink]="['/book', element.name]">
+        <img src="{{ element.image }}" alt="" />
+      </a>
     </td>
   </ng-container>
 
@@ -43,6 +45,9 @@
           aria-hidden="false"
           aria-label="Edit Book"
           fontIcon="edit"
+          #tooltip="matTooltip"
+          matTooltip="Edit"
+          matTooltipPosition="below"
         ></mat-icon
       ></a>
       <mat-icon
@@ -50,6 +55,9 @@
         aria-hidden="false"
         aria-label="Delete Book"
         fontIcon="delete"
+        #tooltip="matTooltip"
+        matTooltip="Delete"
+        matTooltipPosition="below"
         (click)="deleteBook(element.name)"
       ></mat-icon>
     </td>
