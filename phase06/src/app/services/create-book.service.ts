@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Book } from '../interfaces/book.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +7,15 @@ export class CreateBookService {
   constructor() {}
 
   createBook(data: any) {
-    const genres = data.value.genre?.split(',');
+    let genres;
+    if (data.value.genre) {
+      const cleanedString = data.value.genre.trim().endsWith(',')
+        ? data.value.genre.slice(0, -1)
+        : data.value.genre;
+      genres = cleanedString?.split(',');
+    } else {
+      genres = [];
+    }
     const mydata = {
       name: data.value.name,
       image: data.value.name,
