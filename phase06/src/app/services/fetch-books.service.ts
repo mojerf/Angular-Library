@@ -10,7 +10,7 @@ export class FetchBooksService {
   protected books: Book[] = [
     {
       name: 'The Midnight Library',
-      image: 'https://z-lib.io/images/17400000/17418781.webp',
+      image: 'https://picsum.photos/200/300',
       genre: ['Fiction', 'Fantasy'],
       author: 'Matt Haig',
       publishData: '2020-08-13',
@@ -18,8 +18,7 @@ export class FetchBooksService {
     },
     {
       name: 'Dune',
-      image:
-        'https://dunescholar.com/wp-content/uploads/2024/02/Adaptations-of-Dune-book-200x300.jpg',
+      image: 'https://picsum.photos/200/300',
       genre: ['Science Fiction', 'Adventure'],
       author: 'Frank Herbert',
       publishData: '1965-08-01',
@@ -44,8 +43,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Great Gatsby',
-      image:
-        'https://d3fa68hw0m2vcc.cloudfront.net/images/autosize/42695396.jpeg?width=340&height=300&format=jpeg',
+      image: 'https://picsum.photos/200/300',
       genre: ['Fiction', 'Classic'],
       author: 'F. Scott Fitzgerald',
       publishData: '1925-04-10',
@@ -53,7 +51,7 @@ export class FetchBooksService {
     },
     {
       name: "Harry Potter and the Philosopher's Stone",
-      image: 'https://z-lib.io/images/18100000/18134570.webp',
+      image: 'https://picsum.photos/200/300',
       genre: ['Fantasy', 'Young Adult'],
       author: 'J.K. Rowling',
       publishData: '1997-06-26',
@@ -79,8 +77,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Hobbit',
-      image:
-        'https://s2982.pcdn.co/wp-content/uploads/2015/04/the_hobbit_tolkien-200x300.jpg.optimal.jpg',
+      image: 'https://picsum.photos/200/300',
       genre: ['Fantasy', 'Adventure'],
       author: 'J.R.R. Tolkien',
       publishData: '1937-09-21',
@@ -96,7 +93,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Alchemist',
-      image: 'https://z-lib.io/images/13900000/13904079.webp',
+      image: 'https://picsum.photos/200/300',
       genre: ['Fiction', 'Philosophy'],
       author: 'Paulo Coelho',
       publishData: '1988-01-01',
@@ -113,7 +110,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Hunger Games',
-      image: 'https://covers.vitalsource.com/vbid/9781781662717/width/200',
+      image: 'https://picsum.photos/200/300',
       genre: ['Young Adult', 'Science Fiction'],
       author: 'Suzanne Collins',
       publishData: '2008-09-14',
@@ -121,8 +118,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Shining',
-      image:
-        'https://www.screamhorrormag.com/wp-content/uploads/2016/10/The-Shining-Poster-200x300.jpg',
+      image: 'https://picsum.photos/200/300',
       genre: ['Horror', 'Thriller'],
       author: 'Stephen King',
       publishData: '1977-01-28',
@@ -157,7 +153,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Martian',
-      image: 'https://z-lib.io/images/17200000/17211358.webp',
+      image: 'https://picsum.photos/200/300',
       genre: ['Science Fiction', 'Adventure'],
       author: 'Andy Weir',
       publishData: '2011-09-27',
@@ -174,8 +170,7 @@ export class FetchBooksService {
     },
     {
       name: 'The Fault in Our Stars',
-      image:
-        'https://www.arianaburrell.com/uploads/1/6/0/7/16073976/5823084.jpg',
+      image: 'https://picsum.photos/200/300',
       genre: ['Young Adult', 'Romance'],
       author: 'John Green',
       publishData: '2012-01-10',
@@ -183,7 +178,7 @@ export class FetchBooksService {
     },
     {
       name: 'Sapiens: A Brief History of Humankind',
-      image: 'https://z-lib.io/images/17200000/17215824.webp',
+      image: 'https://picsum.photos/200/300',
       genre: ['Non-fiction', 'History'],
       author: 'Yuval Noah Harari',
       publishData: '2011-01-01',
@@ -200,8 +195,7 @@ export class FetchBooksService {
     },
     {
       name: 'Becoming',
-      image:
-        'https://cdn.mos.cms.futurecdn.net/wJfsjGPP8zuBiVimeNAxhJ-200-100.png',
+      image: 'https://picsum.photos/200/300',
       genre: ['Non-fiction', 'Autobiography'],
       author: 'Michelle Obama',
       publishData: '2018-11-13',
