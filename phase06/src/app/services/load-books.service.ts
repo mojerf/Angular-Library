@@ -8,7 +8,8 @@ import { Book } from '../interfaces/book.interface';
 export class LoadBooksService {
   books: Book[];
   constructor(private fetchBooks: FetchBooksService) {
-    this.books = this.fetchBooks.getAllBooks();
+    const data = window.localStorage.getItem('books') as string;
+    this.books = JSON.parse(data);
   }
 
   getBooks(): Book[] {
