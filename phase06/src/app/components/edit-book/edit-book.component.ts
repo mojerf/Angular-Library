@@ -1,11 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CreateBookService } from '../../services/create-book.service';
+import { CrudService } from '../../services/crud.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { LoadBooksService } from '../../services/load-books.service';
 import { Book } from '../../interfaces/book.interface';
-import { UpdateBookService } from '../../services/update-book.service';
 
 @Component({
   selector: 'app-edit-book',
@@ -15,7 +14,7 @@ import { UpdateBookService } from '../../services/update-book.service';
   styleUrl: './edit-book.component.scss',
 })
 export class EditBookComponent implements OnInit {
-  updateService = inject(UpdateBookService);
+  updateService = inject(CrudService);
   bookService = inject(LoadBooksService);
   bookName!: string;
   book!: Book;
@@ -26,6 +25,7 @@ export class EditBookComponent implements OnInit {
     this.bookName = this.route.snapshot.params['name'];
     this.book = this.bookService.getBookByName(this.bookName);
   }
+
   ngOnInit(): void {
     this.newBookForm = new FormGroup({
       name: new FormControl(this.book.name),

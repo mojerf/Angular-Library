@@ -24,6 +24,5 @@ export class MainPageContentComponent {
 
   constructor() {
     this.booksList = this.bookService.getBooks();
-    // this.bookService.getRandomBook(5);
   }
 }

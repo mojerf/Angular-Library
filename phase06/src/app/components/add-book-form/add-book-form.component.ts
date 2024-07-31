@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CreateBookService } from '../../services/create-book.service';
+import { CrudService } from '../../services/crud.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './add-book-form.component.scss',
 })
 export class AddBookFormComponent {
-  createService = inject(CreateBookService);
+  createService = inject(CrudService);
 
   newBookForm = new FormGroup({
     name: new FormControl(''),

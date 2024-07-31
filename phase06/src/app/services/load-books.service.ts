@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { FetchBooksService } from './fetch-books.service';
 import { Book } from '../interfaces/book.interface';
 
@@ -6,32 +6,19 @@ import { Book } from '../interfaces/book.interface';
   providedIn: 'root',
 })
 export class LoadBooksService {
-  books: Book[];
-  constructor(private fetchBooks: FetchBooksService) {
-    if (window.localStorage.getItem('books')) {
-      const data = window.localStorage.getItem('books') as string;
-      this.books = JSON.parse(data);
-    } else {
-      this.books = fetchBooks.getAllBooks();
-    }
-  }
+  fetchBooks = inject(FetchBooksService);
 
   getBooks(): Book[] {
-    return this.books;
-  }
-
-  getRandomBook(howMany: number) {
-    const randomBooks: Book[] = [];
-    for (let i = 0; i < howMany; i++) {
-      randomBooks.push(
-        this.books[Math.floor(Math.random() * this.books.length)]
-      );
+    if (window.localStorage.getItem('books')) {
+      return JSON.parse(window.localStorage.getItem('books') as string);
+    } else {
+      return this.fetchBooks.getAllBooks();
     }
-    return randomBooks;
   }
 
   getBookByName(name: string): any {
-    return this.books.find(
+    const books = this.getBooks();
+    return books.find(
       (book) => book.name.toLocaleLowerCase() === name.toLocaleLowerCase()
     );
   }

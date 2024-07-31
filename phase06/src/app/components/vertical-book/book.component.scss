@@ -1,6 +1,6 @@
 img {
   border-radius: inherit;
-  width: 97%;
+  width: 100%;
 
   -webkit-filter: grayscale(0) blur(0);
   filter: grayscale(0) blur(0);
@@ -31,14 +31,15 @@ a:hover .middle {
 }
 
 a {
-  background-color: #191919;
+  background-color: #333;
   position: relative;
+  display: inherit;
 }
 
 a:hover img {
   -webkit-filter: grayscale(100%) blur(1px);
   filter: grayscale(100%) blur(1px);
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .image-link {

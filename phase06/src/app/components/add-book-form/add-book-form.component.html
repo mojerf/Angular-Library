@@ -1,6 +1,6 @@
 <form [formGroup]="newBookForm" (ngSubmit)="handleSubmit()">
   <label for="name">name</label>
-  <input type="text" formControlName="name" id="name" />
+  <input required type="text" formControlName="name" id="name" />
   <br />
   <label for="image">image</label>
   <input type="text" formControlName="image" id="image" />

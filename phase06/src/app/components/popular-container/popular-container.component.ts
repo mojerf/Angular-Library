@@ -9,6 +9,6 @@ import { LoadBooksService } from '../../services/load-books.service';
   styleUrl: './popular-container.component.scss',
 })
 export class PopularContainerComponent {
-  bookService: LoadBooksService = inject(LoadBooksService);
-  popularBooks = this.bookService.getRandomBook(3);
+  // bookService: LoadBooksService = inject(LoadBooksService);
+  // popularBooks = this.bookService.getRandomBook(3);
 }

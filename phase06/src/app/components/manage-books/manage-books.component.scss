@@ -23,7 +23,12 @@ img {
 .error-icon {
   @include mat.icon-color($theme, $color-variant: error);
 }
-
+.edit-icon {
+  color: #005cbb;
+}
 mat-icon {
   cursor: pointer;
+}
+table {
+  border-radius: 12px;
 }
