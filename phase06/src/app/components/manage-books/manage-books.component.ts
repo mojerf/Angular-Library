@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CrudService } from '../../services/crud.service';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-manage-books',
@@ -25,10 +26,14 @@ export class ManageBooksComponent implements OnInit {
   booksList: Book[] = [];
   bookService: LoadBooksService = inject(LoadBooksService);
   deleteService = inject(CrudService);
+  searchService = inject(SearchService);
 
   ngOnInit(): void {
     this.booksList = this.bookService.getBooks();
     this.deleteService.bookChanged.subscribe((x) => {
+      this.booksList = x;
+    });
+    this.searchService.search.subscribe((x) => {
       this.booksList = x;
     });
   }

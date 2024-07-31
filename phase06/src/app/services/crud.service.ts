@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 export class CrudService {
   constructor() {}
 
-  bookChanged: Subject<Book[]> = new Subject<Book[]>();
+  readonly bookChanged: Subject<Book[]> = new Subject<Book[]>();
 
   createBook(data: any) {
     let genres;

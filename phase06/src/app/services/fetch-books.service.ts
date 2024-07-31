@@ -58,15 +58,6 @@ export class FetchBooksService {
       price: 1099,
     },
     {
-      name: 'The Catcher in the Rye',
-      image:
-        'https://s26162.pcdn.co/wp-content/uploads/sites/2/2018/07/the-catcher-in-the-rye-book-cover-movie-poster-art-3-nishanth-gopinathan-200x300.jpg',
-      genre: ['Fiction', 'Coming-of-age'],
-      author: 'J.D. Salinger',
-      publishData: '1951-07-16',
-      price: 849,
-    },
-    {
       name: 'Pride and Prejudice',
       image:
         'https://cdn.dribbble.com/users/959147/screenshots/7194219/jane_austen_pride_and_prejudice2a_pd_1x.jpg',
