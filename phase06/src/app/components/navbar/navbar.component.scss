@@ -11,13 +11,18 @@ h1 {
   font-size: 65px;
   width: 70px;
   height: 70px;
-  color: #222;
+  color: var(--logo-color);
 }
+
+.theme-toggle {
+  color: var(--text-color);
+}
+
 a {
   font-size: 1rem;
   text-decoration: none;
   align-items: center;
-  color: #3c4043;
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   height: 70px;
@@ -32,12 +37,7 @@ a {
 }
 
 .navbar {
-  background: linear-gradient(
-      0deg,
-      rgba(105, 145, 214, 0.08),
-      rgba(105, 145, 214, 0.08)
-    ),
-    #fff;
+  background: var(--nav-bg);
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -59,6 +59,7 @@ a {
   flex-grow: 1;
   justify-content: flex-end;
 }
+
 .top-nav-container {
   padding-inline-start: 96px;
   display: flex;
@@ -68,7 +69,7 @@ a {
   width: calc(100% - 96px);
   box-shadow: 1px 1px transparent;
   z-index: 1;
-  background: linear-gradient(0deg, transparent 0, #fff 10px);
+  background: var(--top-nav-bg);
   height: 6rem;
   mat-form-field {
     width: 60%;

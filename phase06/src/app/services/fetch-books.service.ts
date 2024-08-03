@@ -5,8 +5,6 @@ import { Book } from '../interfaces/book.interface';
   providedIn: 'root',
 })
 export class FetchBooksService {
-  constructor() {}
-
   protected books: Book[] = [
     {
       name: 'The Midnight Library',

@@ -5,7 +5,7 @@
   margin: 1rem 0 0 0;
   font-size: 1.5rem;
   font-weight: bold;
-  color: black;
+  color: var(--black-white);
   text-decoration: none;
 }
 
@@ -14,8 +14,12 @@
   gap: 0.3rem;
 }
 
+.genre {
+  color: var(--text-color);
+}
+
 .author {
-  color: #555;
+  color: var(--author-color);
   margin: 0;
   font-size: 1rem;
 }
@@ -23,4 +27,5 @@
 .price {
   margin: 1rem 0;
   font-weight: bold;
+  color: var(--text-color);
 }

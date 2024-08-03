@@ -21,13 +21,10 @@
 .book-details-detail-container {
   padding: 1rem;
   flex-direction: column;
+  background-color: var(--card-bg);
+  color: var(--black-white);
 }
 
-.book-buy-btn {
-  background-color: red;
-  padding: 1rem;
-  border: 1px solid black;
-}
 .mat-mdc-card-actions {
   display: flex;
   flex-direction: column;
@@ -57,4 +54,11 @@ mat-divider {
 }
 h2 {
   margin: 0;
+}
+mat-icon {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
 }

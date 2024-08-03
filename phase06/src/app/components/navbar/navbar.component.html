@@ -12,8 +12,8 @@
     <span class="nav-text" mat-icon-button>Manage</span>
   </a>
   <div class="bottom-aligned">
-    <button mat-icon-button>
-      <mat-icon>dark_mode</mat-icon>
+    <button mat-icon-button (click)="changeTheme()">
+      <mat-icon class="theme-toggle" id="themeChangerIcon">dark_mode</mat-icon>
     </button>
   </div>
 </div>

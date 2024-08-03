@@ -5,9 +5,12 @@
   <div class="card-container">
     <mat-card class="book-details-detail-container">
       <mat-card-header>
+        <a (click)="goBack()"><mat-icon>arrow_back_ios</mat-icon> </a>
         <h2>
           {{ book.name }}
-          <span class="author">by {{ book.author }}</span>
+          <a [routerLink]="['/genre', book.author]">
+            <span class="author">by {{ book.author }}</span>
+          </a>
         </h2>
       </mat-card-header>
       <mat-divider></mat-divider>
@@ -26,7 +29,9 @@
         <div class="genres">
           <b>Genre:</b>
           @for (genre of book.genre; track $index) {
-          <mat-chip>{{ genre }}</mat-chip>
+          <a [routerLink]="['/genre', genre]">
+            <mat-chip>{{ genre }}</mat-chip>
+          </a>
           }
         </div>
         <button mat-flat-button>Buy</button>

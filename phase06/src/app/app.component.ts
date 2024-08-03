@@ -5,6 +5,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PopularContainerComponent } from './components/popular-container/popular-container.component';
 import { CommonModule } from '@angular/common';
 import { FooterCComponent } from './components/footer-c/footer-c.component';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',

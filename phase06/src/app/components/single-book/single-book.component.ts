@@ -7,6 +7,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { Location } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-single-book',
@@ -17,6 +20,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatButtonModule,
     MatDividerModule,
+    MatIconModule,
+    RouterLink,
   ],
   providers: [LoadBooksService],
   templateUrl: './single-book.component.html',
@@ -27,9 +32,12 @@ export class SingleBookComponent {
   bookName = '';
   book!: Book;
   bookService = inject(LoadBooksService);
-  constructor() {
+  constructor(private location: Location) {
     this.bookName = this.route.snapshot.params['name'];
     this.book = this.bookService.getBookByName(this.bookName);
-    console.log(this.book);
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

@@ -5,9 +5,11 @@
 <p class="price">${{ bookDetails.price }}</p>
 @if (bookDetails.genre.length) {
 <div class="genre-container">
-  <mat-chip>{{ bookDetails.genre[0] }}</mat-chip>
+  <a [routerLink]="['/genre', bookDetails.genre[0]]">
+    <mat-chip class="genre">{{ bookDetails.genre[0] }}</mat-chip>
+  </a>
   @if (bookDetails.genre.length-1) {
-  <mat-chip>+{{ bookDetails.genre.length - 1 }}</mat-chip>
+  <mat-chip class="genre">+{{ bookDetails.genre.length - 1 }}</mat-chip>
   }
 </div>
 }

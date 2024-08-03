@@ -33,7 +33,28 @@ export class LoadBooksService {
         }
       }
     });
-    console.log(allGenre);
     return allGenre;
+  }
+
+  getBooksByGenre(genre: string) {
+    const books = this.getBooks();
+    const booksByGenre: Book[] = [];
+    books.forEach((book) => {
+      if (book.genre.includes(genre)) {
+        booksByGenre.push(book);
+      }
+    });
+    return booksByGenre;
+  }
+
+  getBooksByAuthor(author: string) {
+    const books = this.getBooks();
+    const booksByAuthor: Book[] = [];
+    books.forEach((book) => {
+      if (book.author.toLocaleLowerCase() === author.toLocaleLowerCase()) {
+        booksByAuthor.push(book);
+      }
+    });
+    return booksByAuthor;
   }
 }
