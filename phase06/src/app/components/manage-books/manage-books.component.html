@@ -2,6 +2,9 @@
   <a mat-flat-button class="demo-button" routerLink="add">Add book</a>
 </div>
 
+@if (booksList.length === 0) {
+<app-error-container [errorMessage]="'Sorry no book was found :('" />
+}@else {
 <table mat-table [dataSource]="booksList" class="mat-elevation-z8 demo-table">
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
@@ -67,3 +70,5 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+
+}

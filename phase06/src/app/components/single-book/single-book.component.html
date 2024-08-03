@@ -5,8 +5,10 @@
   <div class="card-container">
     <mat-card class="book-details-detail-container">
       <mat-card-header>
-        <mat-card-title>{{ book.name }}</mat-card-title>
-        <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+        <h2>
+          {{ book.name }}
+          <span class="author">by {{ book.author }}</span>
+        </h2>
       </mat-card-header>
       <mat-divider></mat-divider>
       <mat-card-actions>

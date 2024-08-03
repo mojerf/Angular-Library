@@ -8,6 +8,7 @@ import { RouterLink } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CrudService } from '../../services/crud.service';
 import { SearchService } from '../../services/search.service';
+import { ErrorContainerComponent } from '../error-container/error-container.component';
 
 @Component({
   selector: 'app-manage-books',
@@ -18,6 +19,7 @@ import { SearchService } from '../../services/search.service';
     RouterLink,
     MatIconModule,
     MatTooltipModule,
+    ErrorContainerComponent,
   ],
   templateUrl: './manage-books.component.html',
   styleUrl: './manage-books.component.scss',

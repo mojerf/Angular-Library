@@ -1,5 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
 html,
 body {
   height: 100%;
@@ -13,4 +11,10 @@ app-root {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+.mdc-text-field--filled {
+  border-radius: 10rem !important;
+}
+.mdc-line-ripple {
+  display: none !important;
 }

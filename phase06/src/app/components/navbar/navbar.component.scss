@@ -1,14 +1,3 @@
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
-  background-color: #d7e3ff;
-  position: fixed;
-  z-index: 100;
-  width: 100%;
-}
-
 .links-container {
   display: flex;
   gap: 1rem;
@@ -20,13 +9,68 @@ h1 {
 
 .logo-icon {
   font-size: 65px;
-  width: 65px;
-  height: 65px;
-  color: #08315c;
-}
-mat-form-field {
-  background-color: white;
+  width: 70px;
+  height: 70px;
+  color: #222;
 }
 a {
   font-size: 1rem;
+  text-decoration: none;
+  align-items: center;
+  color: #3c4043;
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  width: 80px;
+  text-decoration: none;
+  .nav-text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.1px;
+  }
+}
+
+.navbar {
+  background: linear-gradient(
+      0deg,
+      rgba(105, 145, 214, 0.08),
+      rgba(105, 145, 214, 0.08)
+    ),
+    #fff;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  padding: 24px 0;
+  position: fixed;
+  top: 0;
+  width: 96px;
+  z-index: 2;
+}
+
+.bottom-aligned {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+.top-nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 96px;
+  position: fixed;
+  width: 100%;
+  box-shadow: 1px 1px transparent;
+  z-index: 1;
+  background: linear-gradient(0deg, transparent 0, #fff 10px);
+  height: 6rem;
+  mat-form-field {
+    width: 60%;
+  }
 }

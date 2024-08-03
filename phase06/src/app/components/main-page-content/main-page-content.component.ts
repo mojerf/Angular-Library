@@ -5,6 +5,8 @@ import { VerticalBookComponent } from '../vertical-book/book.component';
 import { HorizontalBookComponent } from '../horizontal-book/book.component';
 import { AddBookFormComponent } from '../add-book-form/add-book-form.component';
 import { SearchService } from '../../services/search.service';
+import { ErrorContainerComponent } from '../error-container/error-container.component';
+import { AllGenresContainerComponent } from '../all-genres-container/all-genres-container.component';
 
 @Component({
   selector: 'app-main-page-content',
@@ -14,6 +16,8 @@ import { SearchService } from '../../services/search.service';
     VerticalBookComponent,
     HorizontalBookComponent,
     AddBookFormComponent,
+    ErrorContainerComponent,
+    AllGenresContainerComponent,
   ],
   templateUrl: './main-page-content.component.html',
   styleUrl: './main-page-content.component.scss',

@@ -34,5 +34,6 @@ export class LoadBooksService {
       }
     });
     console.log(allGenre);
+    return allGenre;
   }
 }

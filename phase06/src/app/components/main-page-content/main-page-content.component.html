@@ -1,10 +1,7 @@
-<!-- <div class="container">
-  <h2 style="display: block; width: 100%">Most Popular</h2>
-  @for (book of booksList; track book.name) {
-  <horizontal-book [bookSpec]="book" /> }
-</div> -->
-
 <div class="container">
-  @for (book of booksList; track book.name) {
+  @if (booksList.length ===0) {
+  <app-error-container [errorMessage]="'Sorry no book was found :('" />
+  } @for (book of booksList; track book.name) {
   <vertical-book [bookSpec]="book" /> }
+  <app-all-genres-container />
 </div>
