@@ -60,12 +60,12 @@ a {
   justify-content: flex-end;
 }
 .top-nav-container {
+  padding-inline-start: 96px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 96px;
   position: fixed;
-  width: 100%;
+  width: calc(100% - 96px);
   box-shadow: 1px 1px transparent;
   z-index: 1;
   background: linear-gradient(0deg, transparent 0, #fff 10px);

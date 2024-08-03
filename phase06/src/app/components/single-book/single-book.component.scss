@@ -2,12 +2,11 @@
   width: 100%;
   display: flex;
   gap: 2rem;
-  flex-wrap: wrap;
   box-sizing: border-box;
 }
 
 .book-details-image-container {
-  width: 25%;
+  width: 26%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -48,7 +47,7 @@ mat-card-title {
   }
 }
 .card-container {
-  width: 70%;
+  width: 100%;
 }
 mat-divider {
   margin: 1rem 0;
