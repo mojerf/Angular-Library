@@ -12,7 +12,7 @@ export const routes: Routes = [
   { path: 'manage-books/add', component: AddBookFormComponent },
   { path: 'manage-books', component: ManageBooksComponent },
   { path: 'book/:name', component: SingleBookComponent },
-  { path: 'genre/:var', component: GenrePageComponent },
+  { path: 'genre/:genre', component: GenrePageComponent },
   // { path: 'first-component', component: FirstComponent },
   // { path: 'second-component', component: SecondComponent },
 ];

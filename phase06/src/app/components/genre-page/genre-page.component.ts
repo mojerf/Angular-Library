@@ -16,23 +16,13 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class GenrePageComponent {
   route = inject(ActivatedRoute);
-  variableName = '';
+  genreName = '';
   bookService = inject(LoadBooksService);
   booksByGenre: Book[] = [];
-  booksByAuthor: Book[] = [];
-  books: Book[] = [];
-  isByAuthor = false;
 
   constructor(private location: Location) {
-    this.variableName = this.route.snapshot.params['var'];
-    this.booksByGenre = this.bookService.getBooksByGenre(this.variableName);
-    this.booksByAuthor = this.bookService.getBooksByAuthor(this.variableName);
-    if (this.booksByAuthor.length !== 0) {
-      this.isByAuthor = true;
-      this.books = this.booksByAuthor;
-    } else {
-      this.books = this.booksByGenre;
-    }
+    this.genreName = this.route.snapshot.params['genre'];
+    this.booksByGenre = this.bookService.getBooksByGenre(this.genreName);
   }
 
   goBack() {

@@ -8,9 +8,7 @@
         <a (click)="goBack()"><mat-icon>arrow_back_ios</mat-icon> </a>
         <h2>
           {{ book.name }}
-          <a [routerLink]="['/genre', book.author]">
-            <span class="author">by {{ book.author }}</span>
-          </a>
+          <span class="author">by {{ book.author }}</span>
         </h2>
       </mat-card-header>
       <mat-divider></mat-divider>

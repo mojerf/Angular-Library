@@ -17,7 +17,9 @@
     object-fit: cover;
   }
 }
-
+mat-card-header {
+  align-items: center;
+}
 .book-details-detail-container {
   padding: 1rem;
   flex-direction: column;

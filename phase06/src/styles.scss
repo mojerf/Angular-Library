@@ -35,7 +35,9 @@ body[data-theme="dark"] {
 .mat-mdc-chip-action-label {
   color: var(--text-color) !important;
 }
-
+.mdc-evolution-chip__action--presentational {
+  cursor: pointer !important;
+}
 html,
 body {
   height: 100%;

@@ -9,6 +9,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { CrudService } from '../../services/crud.service';
 import { SearchService } from '../../services/search.service';
 import { ErrorContainerComponent } from '../error-container/error-container.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
   selector: 'app-manage-books',
@@ -20,6 +21,7 @@ import { ErrorContainerComponent } from '../error-container/error-container.comp
     MatIconModule,
     MatTooltipModule,
     ErrorContainerComponent,
+    MatChipsModule,
   ],
   templateUrl: './manage-books.component.html',
   styleUrl: './manage-books.component.scss',

@@ -1,5 +1,5 @@
 <form [formGroup]="newBookForm" (ngSubmit)="handleSubmit()">
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="fill">
     <mat-label>Name</mat-label>
     <input
       matInput
@@ -10,7 +10,7 @@
       id="name"
     />
   </mat-form-field>
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="fill">
     <mat-label>Image</mat-label>
     <input
       matInput
@@ -20,9 +20,9 @@
       formControlName="image"
       id="image"
     />
-    <mat-hint>Image link here</mat-hint>
+    <mat-hint class="hint">Image link here</mat-hint>
   </mat-form-field>
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="fill">
     <mat-label>Author</mat-label>
     <input
       matInput
@@ -33,7 +33,7 @@
       id="author"
     />
   </mat-form-field>
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="fill">
     <mat-label>Publish Date</mat-label>
     <input
       matInput
@@ -44,7 +44,7 @@
       id="publishData"
     />
   </mat-form-field>
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="fill">
     <mat-label>Genre</mat-label>
     <input
       matInput
@@ -54,9 +54,9 @@
       formControlName="genre"
       id="genre"
     />
-    <mat-hint>seperate using comma -> x,y,z</mat-hint>
+    <mat-hint class="hint">seperate using comma -> x,y,z</mat-hint>
   </mat-form-field>
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="fill">
     <mat-label>Price</mat-label>
     <input
       matInput
