@@ -7,4 +7,10 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fdfbff;
+}
+app-root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }

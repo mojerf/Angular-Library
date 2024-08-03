@@ -3,11 +3,21 @@ import { ActivatedRoute } from '@angular/router';
 import { Book } from '../../interfaces/book.interface';
 import { LoadBooksService } from '../../services/load-books.service';
 import { HorizontalBookComponent } from '../horizontal-book/book.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-single-book',
   standalone: true,
-  imports: [HorizontalBookComponent],
+  imports: [
+    HorizontalBookComponent,
+    MatChipsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule,
+  ],
   providers: [LoadBooksService],
   templateUrl: './single-book.component.html',
   styleUrl: './single-book.component.scss',

@@ -5,11 +5,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { LoadBooksService } from '../../services/load-books.service';
 import { Book } from '../../interfaces/book.interface';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-edit-book',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatInputModule, MatButtonModule],
   templateUrl: './edit-book.component.html',
   styleUrl: './edit-book.component.scss',
 })

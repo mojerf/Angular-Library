@@ -31,5 +31,6 @@ export class MainPageContentComponent implements OnInit {
     this.searchService.search.subscribe((x) => {
       this.booksList = x;
     });
+    this.bookService.getAllgenre();
   }
 }

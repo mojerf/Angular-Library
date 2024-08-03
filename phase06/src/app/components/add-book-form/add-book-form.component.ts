@@ -2,11 +2,13 @@ import { Component, inject } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'add-book-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatInputModule, MatButtonModule],
   templateUrl: './add-book-form.component.html',
   styleUrl: './add-book-form.component.scss',
 })

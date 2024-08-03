@@ -22,4 +22,17 @@ export class LoadBooksService {
       (book) => book.name.toLocaleLowerCase() === name.toLocaleLowerCase()
     );
   }
+
+  getAllgenre() {
+    const books = this.getBooks();
+    const allGenre: string[] = [];
+    books.forEach((book) => {
+      for (let i = 0; i < book.genre.length; i++) {
+        if (!allGenre.includes(book.genre[i])) {
+          allGenre.push(book.genre[i]);
+        }
+      }
+    });
+    console.log(allGenre);
+  }
 }

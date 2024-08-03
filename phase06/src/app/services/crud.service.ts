@@ -22,11 +22,11 @@ export class CrudService {
     }
     const mydata = {
       name: data.value.name,
-      image: data.value.name,
+      image: data.value.image,
       genre: genres,
-      author: data.value.name,
-      publishData: data.value.name,
-      price: data.value.name,
+      author: data.value.author,
+      publishData: data.value.publishData,
+      price: data.value.price,
     };
     const bookList = JSON.parse(localStorage.getItem('books') as string);
     bookList.push(mydata);
