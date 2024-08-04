@@ -32,8 +32,8 @@ export class MainPageContentComponent implements OnInit {
     this.booksList = this.bookService.getBooks();
   }
   ngOnInit(): void {
-    this.searchService.search.subscribe((x) => {
-      this.booksList = x;
+    this.searchService.search.subscribe((searchResults) => {
+      this.booksList = searchResults;
     });
     this.bookService.getAllgenre();
   }

@@ -1,4 +1,4 @@
-<form [formGroup]="newBookForm" (ngSubmit)="handleSubmit()">
+<form [formGroup]="newBookForm" (ngSubmit)="handleSubmit()" ngNativeValidate>
   <mat-form-field appearance="fill">
     <mat-label>Name</mat-label>
     <input
@@ -9,6 +9,9 @@
       formControlName="name"
       id="name"
     />
+    @if (newBookForm.get('name')?.hasError('required')) {
+    <mat-error> Name is required. </mat-error>
+    }
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Image</mat-label>
@@ -20,6 +23,9 @@
       formControlName="image"
       id="image"
     />
+    @if (newBookForm.get('image')?.hasError('required')) {
+    <mat-error> Image is required. </mat-error>
+    }
     <mat-hint class="hint">Image link here</mat-hint>
   </mat-form-field>
   <mat-form-field appearance="fill">
@@ -32,6 +38,9 @@
       formControlName="author"
       id="author"
     />
+    @if (newBookForm.get('author')?.hasError('required')) {
+    <mat-error> Author is required. </mat-error>
+    }
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Publish Date</mat-label>
@@ -43,6 +52,9 @@
       formControlName="publishData"
       id="publishData"
     />
+    @if (newBookForm.get('publishData')?.hasError('required')) {
+    <mat-error> publish Data is required. </mat-error>
+    }
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Genre</mat-label>
@@ -54,6 +66,9 @@
       formControlName="genre"
       id="genre"
     />
+    @if (newBookForm.get('genre')?.hasError('required')) {
+    <mat-error> Genre Data is required. </mat-error>
+    }
     <mat-hint class="hint">seperate using comma -> x,y,z</mat-hint>
   </mat-form-field>
   <mat-form-field appearance="fill">
@@ -66,6 +81,9 @@
       formControlName="price"
       id="price"
     />
+    @if (newBookForm.get('price')?.hasError('required')) {
+    <mat-error> Price Data is required. </mat-error>
+    }
   </mat-form-field>
   <button mat-flat-button type="submit">Add book</button>
 </form>

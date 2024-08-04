@@ -1,6 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  RequiredValidator,
+  Validators,
+} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,12 +21,12 @@ export class AddBookFormComponent {
   createService = inject(CrudService);
 
   newBookForm = new FormGroup({
-    name: new FormControl(''),
-    image: new FormControl(''),
-    price: new FormControl(''),
-    publishData: new FormControl(''),
-    genre: new FormControl(''),
-    author: new FormControl(''),
+    name: new FormControl('', Validators.required),
+    image: new FormControl('', Validators.required),
+    price: new FormControl('', Validators.required),
+    publishData: new FormControl('', Validators.required),
+    genre: new FormControl('', Validators.required),
+    author: new FormControl('', Validators.required),
   });
 
   constructor() {}
