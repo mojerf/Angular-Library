@@ -25,17 +25,17 @@ export class EditBookComponent implements OnInit {
 
   constructor() {
     this.bookName = this.route.snapshot.params['name'];
-    this.book = this.bookService.getBookByName(this.bookName);
+    // this.book = this.bookService.getBookByName(this.bookName);
   }
 
   ngOnInit(): void {
     this.newBookForm = new FormGroup({
-      name: new FormControl(this.book.name),
-      image: new FormControl(this.book.image),
-      price: new FormControl(this.book.price),
-      publishData: new FormControl(this.book.publishData),
-      genre: new FormControl(this.book.genre),
-      author: new FormControl(this.book.author),
+      name: new FormControl(this.book.book_title),
+      image: new FormControl(this.book.image_url_m),
+      // price: new FormControl(this.book.price),
+      publishData: new FormControl(this.book.year_of_publication),
+      // genre: new FormControl(this.book.genre),
+      author: new FormControl(this.book.book_author),
     });
   }
 

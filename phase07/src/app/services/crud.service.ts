@@ -35,19 +35,21 @@ export class CrudService {
 
   readBook(name: string) {
     const bookList = JSON.parse(localStorage.getItem('books') as string);
-    return bookList.find((book: Book) => book.name === name);
+    return bookList.find((book: Book) => book.book_title === name);
   }
 
   updateBook(bookName: string, info: any) {
     const bookList = JSON.parse(localStorage.getItem('books') as string);
-    const book: Book = bookList.find((book: Book) => book.name === bookName);
+    const book: Book = bookList.find(
+      (book: Book) => book.book_title === bookName
+    );
 
-    book.name = info.name;
-    book.author = info.author;
-    book.image = info.image;
-    book.price = info.price;
-    book.publishData = info.publishData;
-    book.genre = info.genre;
+    book.book_title = info.name;
+    book.book_author = info.author;
+    book.image_url_m = info.image;
+    // book.price = info.price;
+    book.year_of_publication = info.publishData;
+    // book.genre = info.genre;
 
     localStorage.setItem('books', JSON.stringify(bookList));
     this.bookChanged.next(bookList);
@@ -55,7 +57,9 @@ export class CrudService {
 
   deleteBook(name: string) {
     const bookList = JSON.parse(localStorage.getItem('books') as string);
-    const updatedBookList = bookList.filter((book: Book) => book.name !== name);
+    const updatedBookList = bookList.filter(
+      (book: Book) => book.book_title !== name
+    );
     localStorage.setItem('books', JSON.stringify(updatedBookList));
 
     this.bookChanged.next(updatedBookList);

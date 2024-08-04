@@ -1,14 +1,14 @@
 <div class="book-details-container">
   <div class="book-details-image-container">
-    <img src="{{ book.image }}" />
+    <img src="{{ book.image_url_l }}" />
   </div>
   <div class="card-container">
     <mat-card class="book-details-detail-container">
       <mat-card-header>
         <a (click)="goBack()"><mat-icon>arrow_back_ios</mat-icon> </a>
         <h2>
-          {{ book.name }}
-          <span class="author">by {{ book.author }}</span>
+          {{ book.book_title }}
+          <span class="author">by {{ book.book_author }}</span>
         </h2>
       </mat-card-header>
       <mat-divider></mat-divider>
@@ -22,16 +22,16 @@
           et eveniet. Et beatae animi consectetur cupiditate velit
           magnam.........
         </p>
-        <p><b>Price:</b> ${{ book.price }}</p>
-        <p><b>Publish date: </b> {{ book.publishData }}</p>
-        <div class="genres">
+        <!-- <p><b>Price:</b> ${{ book.price }}</p> -->
+        <p><b>Publish year: </b> {{ book.year_of_publication }}</p>
+        <!-- <div class="genres">
           <b>Genre:</b>
           @for (genre of book.genre; track $index) {
           <a [routerLink]="['/genre', genre]">
             <mat-chip>{{ genre }}</mat-chip>
           </a>
           }
-        </div>
+        </div> -->
         <button mat-flat-button>Buy</button>
       </mat-card-actions>
     </mat-card>

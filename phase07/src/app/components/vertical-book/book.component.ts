@@ -9,13 +9,10 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'vertical-book',
   standalone: true,
-  providers: [FetchService],
   imports: [BookDetailsComponent, MatCardModule, MatButtonModule, RouterLink],
   templateUrl: './book.component.html',
   styleUrl: './book.component.scss',
 })
 export class VerticalBookComponent {
   @Input() bookSpec!: Book;
-
-  constructor() {}
 }

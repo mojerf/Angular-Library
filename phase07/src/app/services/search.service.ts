@@ -11,10 +11,10 @@ export class SearchService {
   bookService = inject(LoadBooksService);
 
   searchFilter(param: string) {
-    const books = this.bookService.getBooks();
-    const newbooks = books.filter((book) =>
-      book.name.toLocaleLowerCase().includes(param.toLocaleLowerCase())
-    ) as Book[];
-    this.search.next(newbooks);
+    // const books = this.bookService.getBooks();
+    // const newbooks = books.filter((book) =>
+    //   book.book_title.toLocaleLowerCase().includes(param.toLocaleLowerCase())
+    // ) as [Book][];
+    // this.search.next(newbooks);
   }
 }

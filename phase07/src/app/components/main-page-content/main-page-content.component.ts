@@ -11,7 +11,6 @@ import { AllGenresContainerComponent } from '../all-genres-container/all-genres-
 @Component({
   selector: 'app-main-page-content',
   standalone: true,
-  providers: [LoadBooksService],
   imports: [
     VerticalBookComponent,
     HorizontalBookComponent,
@@ -31,10 +30,14 @@ export class MainPageContentComponent implements OnInit {
   constructor() {
     this.booksList = this.bookService.getBooks();
   }
+
   ngOnInit(): void {
-    this.searchService.search.subscribe((searchResults) => {
-      this.booksList = searchResults;
+    this.bookService.bookLoader.subscribe((books) => {
+      this.booksList = books;
     });
-    this.bookService.getAllgenre();
+    // this.searchService.search.subscribe((searchResults) => {
+    //   this.booksList = searchResults;
+    // });
+    // this.bookService.getAllgenre();
   }
 }

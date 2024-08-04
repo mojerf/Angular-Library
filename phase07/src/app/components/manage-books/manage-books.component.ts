@@ -33,7 +33,7 @@ export class ManageBooksComponent implements OnInit {
   searchService = inject(SearchService);
 
   ngOnInit(): void {
-    this.booksList = this.bookService.getBooks();
+    // this.booksList = this.bookService.getBooks();
     this.deleteService.bookChanged.subscribe((x) => {
       this.booksList = x;
     });

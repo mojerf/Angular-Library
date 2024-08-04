@@ -13,5 +13,5 @@ import { RouterLink } from '@angular/router';
 })
 export class AllGenresContainerComponent {
   bookService: LoadBooksService = inject(LoadBooksService);
-  allGenre: string[] = this.bookService.getAllgenre();
+  // allGenre: string[] = this.bookService.getAllgenre();
 }
