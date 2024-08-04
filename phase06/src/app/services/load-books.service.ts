@@ -1,12 +1,12 @@
 import { inject, Injectable } from '@angular/core';
-import { FetchBooksService } from './fetch-books.service';
+import { FetchService } from './fetch.service';
 import { Book } from '../interfaces/book.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoadBooksService {
-  fetchBooks = inject(FetchBooksService);
+  fetchBooks = inject(FetchService);
 
   getBooks(): Book[] {
     if (window.localStorage.getItem('books')) {

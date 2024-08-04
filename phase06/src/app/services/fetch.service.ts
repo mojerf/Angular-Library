@@ -4,7 +4,7 @@ import { Book } from '../interfaces/book.interface';
 @Injectable({
   providedIn: 'root',
 })
-export class FetchBooksService {
+export class FetchService {
   protected books: Book[] = [
     {
       name: 'The Midnight Library',
