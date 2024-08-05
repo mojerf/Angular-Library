@@ -29,12 +29,14 @@ import { MatChipsModule } from '@angular/material/chips';
 export class ManageBooksComponent implements OnInit {
   booksList: Book[] = [];
   bookService: LoadBooksService = inject(LoadBooksService);
-  deleteService = inject(CrudService);
-  searchService = inject(SearchService);
+
+  constructor(
+    private crudService: CrudService,
+    private searchService: SearchService
+  ) {}
 
   ngOnInit(): void {
-    // this.booksList = this.bookService.getBooks();
-    this.deleteService.bookChanged.subscribe((x) => {
+    this.crudService.bookChanged.subscribe((x) => {
       this.booksList = x;
     });
     this.searchService.search.subscribe((x) => {
@@ -53,6 +55,6 @@ export class ManageBooksComponent implements OnInit {
   ];
 
   deleteBook(name: string) {
-    this.deleteService.deleteBook(name);
+    this.crudService.deleteBook(name);
   }
 }

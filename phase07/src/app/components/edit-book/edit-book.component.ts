@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { LoadBooksService } from '../../services/load-books.service';
 import { Book } from '../../interfaces/book.interface';
 import { MatInputModule } from '@angular/material/input';
@@ -13,33 +13,47 @@ import { MatButtonModule } from '@angular/material/button';
   standalone: true,
   imports: [ReactiveFormsModule, MatInputModule, MatButtonModule],
   templateUrl: './edit-book.component.html',
-  styleUrl: './edit-book.component.scss',
+  styleUrls: ['./edit-book.component.scss'],
 })
 export class EditBookComponent implements OnInit {
-  updateService = inject(CrudService);
-  bookService = inject(LoadBooksService);
-  bookName!: string;
+  bookId!: string;
   book!: Book;
-  route = inject(ActivatedRoute);
-  newBookForm: any;
+  newBookForm!: FormGroup;
 
-  constructor() {
-    this.bookName = this.route.snapshot.params['name'];
-    // this.book = this.bookService.getBookByName(this.bookName);
-  }
+  constructor(
+    private crudService: CrudService,
+    private bookService: LoadBooksService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      this.bookId = params['id'];
+      this.bookService.getBookById(this.bookId).subscribe(
+        (book: Book) => {
+          this.book = book;
+          this.initializeForm();
+        },
+        (error: any) => {
+          console.error('Error fetching book data', error);
+        }
+      );
+    });
+  }
+
+  initializeForm() {
     this.newBookForm = new FormGroup({
-      name: new FormControl(this.book.book_title),
-      image: new FormControl(this.book.image_url_m),
-      // price: new FormControl(this.book.price),
-      publishData: new FormControl(this.book.year_of_publication),
-      // genre: new FormControl(this.book.genre),
-      author: new FormControl(this.book.book_author),
+      name: new FormControl(this.book.book_title, Validators.required),
+      image: new FormControl(this.book.image_url_m, Validators.required),
+      publishData: new FormControl(
+        this.book.year_of_publication,
+        Validators.required
+      ),
+      author: new FormControl(this.book.book_author, Validators.required),
     });
   }
 
   handleSubmit() {
-    this.updateService.updateBook(this.bookName, this.newBookForm.value);
+    this.crudService.updateBook(this.bookId, this.newBookForm.value);
   }
 }

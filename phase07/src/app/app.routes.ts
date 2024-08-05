@@ -9,7 +9,7 @@ import { EditBookComponent } from './components/edit-book/edit-book.component';
 export const routes: Routes = [
   { path: '', component: MainPageContentComponent },
   // { path: '/page/:page', component: MainPageContentComponent },
-  { path: 'manage-books/edit/:name', component: EditBookComponent },
+  { path: 'manage-books/edit/:id', component: EditBookComponent },
   { path: 'manage-books/add', component: AddBookFormComponent },
   { path: 'manage-books', component: ManageBooksComponent },
   { path: 'book/:id', component: SingleBookComponent },

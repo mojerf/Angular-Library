@@ -8,8 +8,8 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [MatChipsModule, RouterLink],
   templateUrl: './book-details.component.html',
-  styleUrl: './book-details.component.scss',
+  styleUrls: ['./book-details.component.scss'],
 })
 export class BookDetailsComponent {
-  @Input() bookDetails!: Book;
+  @Input() bookDetails?: Book;
 }

@@ -29,17 +29,20 @@ export class MainPageContentComponent implements OnInit {
   pageIndex = 0;
   pageSizeOptions = [15, 30, 45];
 
+  hidePageSize = false;
+  showPageSizeOptions = true;
+  showFirstLastButtons = true;
+  disabled = false;
+
+  title = 'Main Page';
+  booksList: Book[] = [];
+
   handlePageEvent(e: PageEvent) {
     this.length = e.length;
     this.pageSize = e.pageSize;
     this.pageIndex = e.pageIndex;
     this.bookService.getBooks(this.pageIndex, this.pageSize);
   }
-
-  hidePageSize = false;
-  showPageSizeOptions = true;
-  showFirstLastButtons = true;
-  disabled = false;
 
   setPageSizeOptions(setPageSizeOptionsInput: string) {
     if (setPageSizeOptionsInput) {
@@ -49,12 +52,10 @@ export class MainPageContentComponent implements OnInit {
     }
   }
 
-  title = 'Main Page';
-  booksList: Book[] = [];
-  bookService = inject(LoadBooksService);
-  searchService = inject(SearchService);
-
-  constructor() {
+  constructor(
+    private bookService: LoadBooksService,
+    private searchService: SearchService
+  ) {
     let bookJson = this.bookService.getBooks(this.pageIndex, this.pageSize);
     this.booksList = bookJson.books;
     this.length = bookJson.pages * this.pageSize;
@@ -65,9 +66,5 @@ export class MainPageContentComponent implements OnInit {
       this.booksList = books.books;
       this.length = books.pages * this.pageSize;
     });
-    // this.searchService.search.subscribe((searchResults) => {
-    //   this.booksList = searchResults;
-    // });
-    // this.bookService.getAllgenre();
   }
 }

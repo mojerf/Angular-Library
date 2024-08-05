@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
   standalone: true,
   imports: [MatCardModule],
   templateUrl: './error-container.component.html',
-  styleUrl: './error-container.component.scss',
+  styleUrls: ['./error-container.component.scss'],
 })
 export class ErrorContainerComponent {
   @Input() errorMessage: string = '';

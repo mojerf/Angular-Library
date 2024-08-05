@@ -1,11 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
-import {
-  FormControl,
-  FormGroup,
-  RequiredValidator,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,11 +10,9 @@ import { MatButtonModule } from '@angular/material/button';
   standalone: true,
   imports: [ReactiveFormsModule, MatInputModule, MatButtonModule],
   templateUrl: './add-book-form.component.html',
-  styleUrl: './add-book-form.component.scss',
+  styleUrls: ['./add-book-form.component.scss'],
 })
 export class AddBookFormComponent {
-  createService = inject(CrudService);
-
   newBookForm = new FormGroup({
     name: new FormControl('', Validators.required),
     image: new FormControl('', Validators.required),
@@ -29,9 +22,13 @@ export class AddBookFormComponent {
     author: new FormControl('', Validators.required),
   });
 
-  constructor() {}
+  constructor(private crudService: CrudService) {}
 
   handleSubmit() {
-    this.createService.createBook(this.newBookForm);
+    this.crudService.createBook(this.newBookForm);
+    // this.crudService.createBook(this.newBookForm.value).subscribe({  Injoori shayad behtar bashe
+    //   next: (response) => console.log('Book created successfully', response),
+    //   error: (error) => console.error('Error creating book', error),
+    // });
   }
 }

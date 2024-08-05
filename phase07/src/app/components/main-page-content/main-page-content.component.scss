@@ -1,28 +1,25 @@
-vertical-book {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  width: 15rem;
-  gap: 1rem;
-}
-
-horizontal-book {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  width: 25rem;
-  gap: 1rem;
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-}
-
-.paginator {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  horizontal-book {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 25rem;
+    gap: 1rem;
+  }
+  vertical-book {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 15rem;
+    gap: 1rem;
+  }
+  .paginator {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }

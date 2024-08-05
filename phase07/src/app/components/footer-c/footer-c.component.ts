@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './footer-c.component.html',
-  styleUrl: './footer-c.component.scss'
+  styleUrl: './footer-c.component.scss',
 })
-export class FooterCComponent {
-
-}
+export class FooterCComponent {}

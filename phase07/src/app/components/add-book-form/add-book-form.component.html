@@ -1,5 +1,5 @@
 <form [formGroup]="newBookForm" (ngSubmit)="handleSubmit()" ngNativeValidate>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="form-field">
     <mat-label>Name</mat-label>
     <input
       matInput
@@ -85,5 +85,5 @@
     <mat-error> Price Data is required. </mat-error>
     }
   </mat-form-field>
-  <button mat-flat-button type="submit">Add book</button>
+  <button class="submit-btn" mat-flat-button type="submit">Add book</button>
 </form>
