@@ -7,6 +7,7 @@ import { AddBookFormComponent } from '../add-book-form/add-book-form.component';
 import { SearchService } from '../../services/search.service';
 import { ErrorContainerComponent } from '../error-container/error-container.component';
 import { AllGenresContainerComponent } from '../all-genres-container/all-genres-container.component';
+import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-main-page-content',
@@ -17,23 +18,51 @@ import { AllGenresContainerComponent } from '../all-genres-container/all-genres-
     AddBookFormComponent,
     ErrorContainerComponent,
     AllGenresContainerComponent,
+    MatPaginatorModule,
   ],
   templateUrl: './main-page-content.component.html',
   styleUrl: './main-page-content.component.scss',
 })
 export class MainPageContentComponent implements OnInit {
+  length = 271352;
+  pageSize = 10;
+  pageIndex = 0;
+  pageSizeOptions = [5, 10, 25];
+  handlePageEvent(e: PageEvent) {
+    this.length = e.length;
+    this.pageSize = e.pageSize;
+    this.pageIndex = e.pageIndex;
+    this.bookService.getBooks(this.pageIndex, this.pageSize);
+  }
+
+  hidePageSize = false;
+  showPageSizeOptions = true;
+  showFirstLastButtons = true;
+  disabled = false;
+
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    if (setPageSizeOptionsInput) {
+      this.pageSizeOptions = setPageSizeOptionsInput
+        .split(',')
+        .map((str) => +str);
+    }
+  }
+
   title = 'Main Page';
   booksList: Book[] = [];
   bookService = inject(LoadBooksService);
   searchService = inject(SearchService);
 
   constructor() {
-    this.booksList = this.bookService.getBooks();
+    let bookJson = this.bookService.getBooks(this.pageIndex, this.pageSize);
+    this.booksList = bookJson.books;
+    this.length = bookJson.pages * this.pageSize;
   }
 
   ngOnInit(): void {
     this.bookService.bookLoader.subscribe((books) => {
-      this.booksList = books;
+      this.booksList = books.books;
+      this.length = books.pages * this.pageSize;
     });
     // this.searchService.search.subscribe((searchResults) => {
     //   this.booksList = searchResults;

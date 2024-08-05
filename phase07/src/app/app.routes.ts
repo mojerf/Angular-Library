@@ -12,6 +12,6 @@ export const routes: Routes = [
   { path: 'manage-books/edit/:name', component: EditBookComponent },
   { path: 'manage-books/add', component: AddBookFormComponent },
   { path: 'manage-books', component: ManageBooksComponent },
-  { path: 'book/:name', component: SingleBookComponent },
+  { path: 'book/:id', component: SingleBookComponent },
   // { path: 'genre/:genre', component: GenrePageComponent },
 ];

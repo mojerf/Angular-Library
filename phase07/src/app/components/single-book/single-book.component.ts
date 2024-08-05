@@ -29,12 +29,12 @@ import { RouterLink } from '@angular/router';
 })
 export class SingleBookComponent {
   route = inject(ActivatedRoute);
-  bookName = '';
+  bookId = '';
   book!: Book;
   bookService = inject(LoadBooksService);
   constructor(private location: Location) {
-    this.bookName = this.route.snapshot.params['name'];
-    // this.book = this.bookService.getBookByName(this.bookName);
+    this.bookId = this.route.snapshot.params['id'];
+    this.book = this.bookService.getBookById(this.bookId);
   }
 
   goBack() {

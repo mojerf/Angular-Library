@@ -6,12 +6,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class FetchService {
-  // private id: number;
-  private readonly url = `/api/books?page=1&page_size=10`;
   private http = inject(HttpClient);
 
-  getAllBooks() {
-    const bookList = this.http.get<BookJson>(this.url);
+  getAllBooks(page: number, pageSize: number) {
+    const bookList = this.http.get<BookJson>(
+      `/api/books?page=${page}&page_size=${pageSize}`
+    );
     return bookList;
   }
 }

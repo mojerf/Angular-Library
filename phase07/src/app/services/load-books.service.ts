@@ -1,29 +1,29 @@
 import { inject, Injectable } from '@angular/core';
 import { FetchService } from './fetch.service';
-import { Book, BookJson } from '../interfaces/book.interface';
+import { BookJson } from '../interfaces/book.interface';
 import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoadBooksService {
-  bookLoader = new Subject<Book[]>();
+  bookLoader = new Subject<BookJson>();
   fetchBooks = inject(FetchService);
 
-  getBooks(): Book[] {
-    this.fetchBooks.getAllBooks().subscribe((data: BookJson) => {
-      this.bookLoader.next(data.books);
-      return data.books;
+  getBooks(page: number, pageSize: number): BookJson {
+    this.fetchBooks.getAllBooks(page, pageSize).subscribe((data: BookJson) => {
+      this.bookLoader.next(data);
+      return data;
     });
-    return [];
+    return {} as BookJson;
   }
 
-  // getBookByName(name: string): any {
-  //   const books = this.getBooks();
-  //   return books.find(
-  //     (book) => book.book_title.toLocaleLowerCase() === name.toLocaleLowerCase()
-  //   );
-  // }
+  getBookById(id: string): any {
+    // const books = this.getBooks();
+    // return books.find(
+    //   (book) => book.book_title.toLocaleLowerCase() === name.toLocaleLowerCase()
+    // );
+  }
 
   // getAllgenre() {
   //   const books = this.getBooks();
