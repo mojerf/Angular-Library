@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from '../../interfaces/book.interface';
 import { LoadBooksService } from '../../services/load-books.service';
@@ -25,16 +25,34 @@ import { RouterLink } from '@angular/router';
   ],
   providers: [LoadBooksService],
   templateUrl: './single-book.component.html',
-  styleUrl: './single-book.component.scss',
+  styleUrls: ['./single-book.component.scss'],
 })
-export class SingleBookComponent {
-  route = inject(ActivatedRoute);
+export class SingleBookComponent implements OnInit {
   bookId = '';
   book!: Book;
-  bookService = inject(LoadBooksService);
-  constructor(private location: Location) {
+
+  constructor(
+    private location: Location,
+    private route: ActivatedRoute,
+    private bookService: LoadBooksService
+  ) {}
+
+  ngOnInit(): void {
     this.bookId = this.route.snapshot.params['id'];
-    // this.book = this.bookService.getBookById(this.bookId);
+    console.log(this.bookId);
+
+    this.fetchBook();
+  }
+
+  fetchBook() {
+    this.bookService.loadBooksById(this.bookId.substring(0, 6)).subscribe(
+      (book: Book) => {
+        this.book = book;
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
 
   goBack() {

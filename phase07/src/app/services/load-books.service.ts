@@ -1,7 +1,8 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { FetchService } from './fetch.service';
-import { BookJson } from '../interfaces/book.interface';
-import { Subject } from 'rxjs';
+import { Book, BookJson } from '../interfaces/book.interface';
+import { Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ import { Subject } from 'rxjs';
 export class LoadBooksService {
   bookLoader = new Subject<BookJson>();
 
-  constructor(private fetchBooks: FetchService) {}
+  constructor(private fetchBooks: FetchService, private http: HttpClient) {}
 
   getBooks(page: number, pageSize: number): BookJson {
     this.fetchBooks.getAllBooks(page, pageSize).subscribe((data: BookJson) => {
@@ -19,7 +20,8 @@ export class LoadBooksService {
     return {} as BookJson;
   }
 
-  loadBooksByName(name: string) {
-    console.log('test');
+  loadBooksById(bookId: string): Observable<Book> {
+    const url = `/api/books?page=1&isbn=${bookId}`;
+    return this.http.get<Book>(url);
   }
 }
