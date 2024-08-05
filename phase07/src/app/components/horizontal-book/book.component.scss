@@ -1,16 +1,8 @@
-.image-container > img {
-  border-radius: 0.5rem;
-  border: 1px solid #222;
-}
-.details-container {
-  width: 100%;
-}
-
-.grid {
-  display: grid;
-}
-
 .book-card {
   width: 100%;
   flex-direction: row;
+
+  .grid {
+    display: grid;
+  }
 }

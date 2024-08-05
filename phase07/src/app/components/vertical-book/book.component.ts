@@ -1,6 +1,5 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BookDetailsComponent } from '../book-details/book-details.component';
-import { FetchService } from '../../services/fetch.service';
 import { Book } from '../../interfaces/book.interface';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';

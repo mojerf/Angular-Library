@@ -1,5 +1,5 @@
 <form [formGroup]="newBookForm" (ngSubmit)="handleSubmit()">
-  <img [src]="book.image_url_m" /><br />
+  <img [src]="book.image_url_m" class="book-image" /><br />
   <mat-form-field appearance="fill" class="form-field">
     <mat-label>Name</mat-label>
     <input
@@ -11,7 +11,7 @@
       id="name"
     />
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="form-field">
     <mat-label>Image</mat-label>
     <input
       matInput
@@ -23,7 +23,7 @@
     />
     <mat-hint class="hint">Image link here</mat-hint>
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="form-field">
     <mat-label>Author</mat-label>
     <input
       matInput
@@ -34,7 +34,7 @@
       id="author"
     />
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="form-field">
     <mat-label>Publish Date</mat-label>
     <input
       matInput
@@ -45,7 +45,7 @@
       id="publishData"
     />
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="form-field">
     <mat-label>Genre</mat-label>
     <input
       matInput
@@ -57,7 +57,7 @@
     />
     <mat-hint class="hint">seperate using comma -> x,y,z</mat-hint>
   </mat-form-field>
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" class="form-field">
     <mat-label>Price</mat-label>
     <input
       matInput
@@ -68,5 +68,5 @@
       id="price"
     />
   </mat-form-field>
-  <button mat-flat-button type="submit">Edit book</button>
+  <button mat-flat-button type="submit" class="submit-button">Edit book</button>
 </form>

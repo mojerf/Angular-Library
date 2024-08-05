@@ -1,6 +1,6 @@
 <div class="container">
   @for (book of booksList; track book.id) {
-  <vertical-book [bookSpec]="book" />
+  <vertical-book [bookSpec]="book" class="vertical-book" />
   }@if (booksList[0]) {
   <mat-paginator
     #paginator
@@ -19,5 +19,4 @@
   }@else {
   <app-error-container [errorMessage]="'Sorry no book was found :('" />
   }
-  <app-all-genres-container />
 </div>

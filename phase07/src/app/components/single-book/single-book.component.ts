@@ -34,7 +34,7 @@ export class SingleBookComponent {
   bookService = inject(LoadBooksService);
   constructor(private location: Location) {
     this.bookId = this.route.snapshot.params['id'];
-    this.book = this.bookService.getBookById(this.bookId);
+    // this.book = this.bookService.getBookById(this.bookId);
   }
 
   goBack() {

@@ -32,12 +32,6 @@ body[data-theme="dark"] {
   --author-color: #aaa;
   background-color: var(--bg-color);
 }
-.mat-mdc-chip-action-label {
-  color: var(--text-color) !important;
-}
-.mdc-evolution-chip__action--presentational {
-  cursor: pointer !important;
-}
 html,
 body {
   height: 100%;
@@ -45,15 +39,26 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-app-root {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-.mdc-text-field--filled {
-  border-radius: 10rem !important;
-}
-.mdc-line-ripple {
-  display: none !important;
+
+  .root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    .mat-mdc-chip-action-label {
+      color: var(--text-color) !important;
+    }
+
+    .mdc-evolution-chip__action--presentational {
+      cursor: pointer !important;
+    }
+
+    .mdc-text-field--filled {
+      border-radius: 10rem !important;
+    }
+
+    .mdc-line-ripple {
+      display: none !important;
+    }
+  }
 }

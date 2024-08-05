@@ -11,5 +11,5 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./book-details.component.scss'],
 })
 export class BookDetailsComponent {
-  @Input() bookDetails?: Book;
+  @Input() bookDetails!: Book;
 }

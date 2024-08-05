@@ -1,6 +1,7 @@
 <mat-card class="book-card" appearance="raised">
   <a class="image-link" [routerLink]="['/book', bookSpec.isbn]">
     <img
+      class="book-image"
       mat-card-image
       src="{{ bookSpec.image_url_l }}"
       alt="{{ bookSpec.book_title }}"

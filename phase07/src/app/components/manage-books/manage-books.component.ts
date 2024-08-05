@@ -28,11 +28,11 @@ import { MatChipsModule } from '@angular/material/chips';
 })
 export class ManageBooksComponent implements OnInit {
   booksList: Book[] = [];
-  bookService: LoadBooksService = inject(LoadBooksService);
 
   constructor(
     private crudService: CrudService,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private bookService: LoadBooksService
   ) {}
 
   ngOnInit(): void {

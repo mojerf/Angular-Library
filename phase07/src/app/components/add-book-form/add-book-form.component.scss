@@ -1,13 +1,12 @@
-mat-form-field {
-  width: 46%;
-  padding: 1rem;
-  .hint {
-    color: var(--text-color);
+:host {
+  .form-field {
+    width: 46%;
+    padding: 1rem;
+    .hint {
+      color: var(--text-color);
+    }
   }
-  .mat-mdc-form-field-subscript-wrapper {
-    padding-bottom: 1rem;
+  .submit-btn {
+    margin: 1rem;
   }
-}
-.submit-btn {
-  margin: 1rem;
 }

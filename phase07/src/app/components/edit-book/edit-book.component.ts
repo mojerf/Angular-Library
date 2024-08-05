@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './edit-book.component.html',
   styleUrls: ['./edit-book.component.scss'],
 })
-export class EditBookComponent implements OnInit {
+export class EditBookComponent {
   bookId!: string;
   book!: Book;
   newBookForm!: FormGroup;
@@ -25,21 +25,6 @@ export class EditBookComponent implements OnInit {
     private bookService: LoadBooksService,
     private route: ActivatedRoute
   ) {}
-
-  ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      this.bookId = params['id'];
-      this.bookService.getBookById(this.bookId).subscribe(
-        (book: Book) => {
-          this.book = book;
-          this.initializeForm();
-        },
-        (error: any) => {
-          console.error('Error fetching book data', error);
-        }
-      );
-    });
-  }
 
   initializeForm() {
     this.newBookForm = new FormGroup({
