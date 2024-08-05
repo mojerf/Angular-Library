@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FetchService {
   // private id: number;
-  private readonly url = `http://192.168.23.22:3000/books?page=${1}&page_size=${15}`;
+  private readonly url = `/api/books?page=1&page_size=10`;
   private http = inject(HttpClient);
 
   getAllBooks() {
