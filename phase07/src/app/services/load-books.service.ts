@@ -18,12 +18,12 @@ export class LoadBooksService {
     return {} as BookJson;
   }
 
-  getBookById(id: string): any {
-    // const books = this.getBooks();
-    // return books.find(
-    //   (book) => book.book_title.toLocaleLowerCase() === name.toLocaleLowerCase()
-    // );
-  }
+  // getBookById(id: string): any {
+  //   const books = this.getBooks();
+  //   return books.find(
+  //     (book) => book.book_title.toLocaleLowerCase() === name.toLocaleLowerCase()
+  //   );
+  // }
 
   // getAllgenre() {
   //   const books = this.getBooks();

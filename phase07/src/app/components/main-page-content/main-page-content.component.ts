@@ -24,10 +24,11 @@ import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
   styleUrl: './main-page-content.component.scss',
 })
 export class MainPageContentComponent implements OnInit {
-  length = 271352;
-  pageSize = 10;
+  length: number;
+  pageSize = 15;
   pageIndex = 0;
-  pageSizeOptions = [5, 10, 25];
+  pageSizeOptions = [15, 30, 45];
+
   handlePageEvent(e: PageEvent) {
     this.length = e.length;
     this.pageSize = e.pageSize;

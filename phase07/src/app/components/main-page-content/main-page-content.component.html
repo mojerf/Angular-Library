@@ -1,12 +1,10 @@
 <div class="container">
-  @for (book of booksList; track book) {
+  @for (book of booksList; track book.id) {
   <vertical-book [bookSpec]="book" />
-  } @empty {
-  <app-error-container [errorMessage]="'Sorry no book was found :('" />
-  } @if (booksList[0]) {
+  }@if (booksList[0]) {
   <mat-paginator
     #paginator
-    class="demo-paginator"
+    class="paginator"
     [length]="length"
     [pageSize]="pageSize"
     [disabled]="disabled"
@@ -18,6 +16,8 @@
     (page)="handlePageEvent($event)"
   >
   </mat-paginator>
+  }@else {
+  <app-error-container [errorMessage]="'Sorry no book was found :('" />
   }
   <app-all-genres-container />
 </div>
