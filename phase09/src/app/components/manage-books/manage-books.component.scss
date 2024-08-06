@@ -1,40 +1,41 @@
-.add-btn {
-  padding-padding-block-end: 16px;
-}
-
-.container {
-  &__table {
-    inline-size: 100%;
-    padding: 0.5rem 1rem;
-    border-radius: 12px;
-    background-color: var(--bg-color);
+:host {
+  .add-btn {
+    padding-block-end: 16px;
   }
 
-  &__img {
-    block-size: 100px;
-    border-radius: 5px;
-    padding: 0.5rem 0;
-  }
+  .container {
+    &__table {
+      inline-size: 100%;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      background-color: var(--bg-color);
 
-  &__delete {
-    color: #ba1a1a;
-  }
+      &__img {
+        block-size: 100px;
+        border-radius: 5px;
+        padding: 0.5rem 0;
+      }
 
-  &__edit {
-    color: #005cbb;
-  }
+      &__chips {
+        margin: 0 0.1rem;
+        cursor: pointer;
+      }
 
-  &__icon {
-    cursor: pointer;
-  }
+      &__delete {
+        color: #ba1a1a;
+      }
 
-  &__link {
-    text-decoration: none;
-    color: var(--logo-color);
-  }
+      &__edit {
+        color: #005cbb;
+      }
 
-  &__chips {
-    margin: 0 0.1rem;
-    cursor: pointer;
+      &__icon {
+        cursor: pointer;
+      }
+
+      tr {
+        color: var(--black-white);
+      }
+    }
   }
 }
