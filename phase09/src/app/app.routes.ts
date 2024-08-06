@@ -10,11 +10,23 @@ import { ContactComponent } from './components/contact/contact.component';
 
 export const routes: Routes = [
   { path: 'manage-books/edit/:name', component: EditBookComponent },
-  { path: 'manage-books/add', component: AddBookFormComponent },
-  { path: 'manage-books', component: ManageBooksComponent },
+  {
+    path: 'manage-books/add',
+    component: AddBookFormComponent,
+    title: 'Library - Add new book',
+  },
+  {
+    path: 'manage-books',
+    component: ManageBooksComponent,
+    title: 'Library - Manage books',
+  },
   { path: 'book/:name', component: SingleBookComponent },
   { path: 'genre/:genre', component: GenrePageComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: '', component: MainPageContentComponent },
+  { path: 'about', component: AboutComponent, title: 'Library - About Us' },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    title: 'Library - Contact Us',
+  },
+  { path: '', component: MainPageContentComponent, title: 'Library :)' },
 ];

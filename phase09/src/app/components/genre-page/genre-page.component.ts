@@ -5,12 +5,13 @@ import { VerticalBookComponent } from '../vertical-book/book.component';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-genre-page',
   standalone: true,
   imports: [VerticalBookComponent, MatIconModule],
-  providers: [LoadBooksService],
+  providers: [LoadBooksService, Title],
   templateUrl: './genre-page.component.html',
   styleUrl: './genre-page.component.scss',
 })
@@ -21,11 +22,13 @@ export class GenrePageComponent implements OnInit {
   constructor(
     private location: Location,
     private bookService: LoadBooksService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private title: Title
   ) {}
 
   ngOnInit() {
     this.genreName = this.route.snapshot.params['genre'];
+    this.title.setTitle(`Library - ${this.genreName} Genre`);
     this.booksByGenre = this.bookService.getBooksByGenre(this.genreName);
   }
 

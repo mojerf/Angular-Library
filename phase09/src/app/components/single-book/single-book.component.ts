@@ -10,6 +10,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { Location } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-single-book',
@@ -23,7 +24,7 @@ import { RouterLink } from '@angular/router';
     MatIconModule,
     RouterLink,
   ],
-  providers: [LoadBooksService],
+  providers: [LoadBooksService, Title],
   templateUrl: './single-book.component.html',
   styleUrl: './single-book.component.scss',
 })
@@ -33,11 +34,13 @@ export class SingleBookComponent implements OnInit {
   constructor(
     private location: Location,
     private route: ActivatedRoute,
-    private bookService: LoadBooksService
+    private bookService: LoadBooksService,
+    private title: Title
   ) {}
 
   ngOnInit(): void {
     this.bookName = this.route.snapshot.params['name'];
+    this.title.setTitle(`Library - ${this.bookName}`);
     this.book = this.bookService.getBookByName(this.bookName);
   }
 
