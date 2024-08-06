@@ -253,7 +253,6 @@ export class FetchService {
   ];
 
   getAllBooks() {
-    window.localStorage.setItem('books', JSON.stringify(this.books));
     return this.books;
   }
 }

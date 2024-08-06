@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoadBooksService } from '../../services/load-books.service';
 import { Book } from '../../interfaces/book.interface';
 import { VerticalBookComponent } from '../vertical-book/book.component';
@@ -14,13 +14,17 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './genre-page.component.html',
   styleUrl: './genre-page.component.scss',
 })
-export class GenrePageComponent {
-  route = inject(ActivatedRoute);
+export class GenrePageComponent implements OnInit {
   genreName = '';
-  bookService = inject(LoadBooksService);
   booksByGenre: Book[] = [];
 
-  constructor(private location: Location) {
+  constructor(
+    private location: Location,
+    private bookService: LoadBooksService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
     this.genreName = this.route.snapshot.params['genre'];
     this.booksByGenre = this.bookService.getBooksByGenre(this.genreName);
   }

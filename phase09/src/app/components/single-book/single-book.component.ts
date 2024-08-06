@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from '../../interfaces/book.interface';
 import { LoadBooksService } from '../../services/load-books.service';
@@ -27,12 +27,16 @@ import { RouterLink } from '@angular/router';
   templateUrl: './single-book.component.html',
   styleUrl: './single-book.component.scss',
 })
-export class SingleBookComponent {
-  route = inject(ActivatedRoute);
+export class SingleBookComponent implements OnInit {
   bookName = '';
   book!: Book;
-  bookService = inject(LoadBooksService);
-  constructor(private location: Location) {
+  constructor(
+    private location: Location,
+    private route: ActivatedRoute,
+    private bookService: LoadBooksService
+  ) {}
+
+  ngOnInit(): void {
     this.bookName = this.route.snapshot.params['name'];
     this.book = this.bookService.getBookByName(this.bookName);
   }

@@ -1,30 +1,42 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { FetchService } from './fetch.service';
 import { Book } from '../interfaces/book.interface';
+import { Subject, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoadBooksService {
-  fetchBooks = inject(FetchService);
+  books$ = new Subject<Book[]>();
 
-  getBooks(): Book[] {
+  constructor(private fetchBooks: FetchService) {}
+
+  bookSetter(): Book[] {
     if (window.localStorage.getItem('books')) {
-      return JSON.parse(window.localStorage.getItem('books') as string);
+      return JSON.parse(
+        window.localStorage.getItem('books') as string
+      ) as Book[];
     } else {
-      return this.fetchBooks.getAllBooks();
+      let book = this.fetchBooks.getAllBooks();
+      window.localStorage.setItem('books', JSON.stringify(book));
+      return book;
     }
   }
 
+  getBooks() {
+    let book = this.bookSetter();
+    this.books$.next(book);
+  }
+
   getBookByName(name: string): any {
-    const books = this.getBooks();
+    let books = this.bookSetter();
     return books.find(
       (book) => book.name.toLocaleLowerCase() === name.toLocaleLowerCase()
     );
   }
 
   getAllgenre() {
-    const books = this.getBooks();
+    let books = this.bookSetter();
     const allGenre: string[] = [];
     books.forEach((book) => {
       for (let i = 0; i < book.genre.length; i++) {
@@ -37,7 +49,7 @@ export class LoadBooksService {
   }
 
   getBooksByGenre(genre: string) {
-    const books = this.getBooks();
+    let books = this.bookSetter();
     const booksByGenre: Book[] = [];
     books.forEach((book) => {
       if (book.genre.includes(genre)) {
@@ -48,7 +60,7 @@ export class LoadBooksService {
   }
 
   getBooksByAuthor(author: string) {
-    const books = this.getBooks();
+    let books = this.bookSetter();
     const booksByAuthor: Book[] = [];
     books.forEach((book) => {
       if (book.author.toLocaleLowerCase() === author.toLocaleLowerCase()) {

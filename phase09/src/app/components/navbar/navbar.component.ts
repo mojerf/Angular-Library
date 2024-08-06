@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -30,15 +25,19 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class NavbarComponent implements OnInit {
   isLight: boolean = false;
-  bookService = inject(LoadBooksService);
-  themeService = inject(ThemeService);
-  searchService = inject(SearchService);
   searchValue = '';
+
+  constructor(
+    private themeService: ThemeService,
+    private searchService: SearchService
+  ) {}
+
   ngOnInit(): void {
     this.themeService.onToggle.subscribe((val) => {
       this.isLight = val;
     });
   }
+
   changeTheme() {
     this.isLight = !this.isLight;
     this.themeService.toggleTheme(this.isLight);
@@ -46,6 +45,7 @@ export class NavbarComponent implements OnInit {
       ? 'light_mode'
       : 'dark_mode';
   }
+
   search(e: Event) {
     const searchValue = (e.target as HTMLInputElement).value;
     this.searchService.searchFilter(searchValue);

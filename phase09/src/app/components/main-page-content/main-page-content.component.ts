@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoadBooksService } from '../../services/load-books.service';
 import { Book } from '../../interfaces/book.interface';
 import { VerticalBookComponent } from '../vertical-book/book.component';
@@ -25,16 +25,20 @@ import { AllGenresContainerComponent } from '../all-genres-container/all-genres-
 export class MainPageContentComponent implements OnInit {
   title = 'Main Page';
   booksList: Book[] = [];
-  bookService = inject(LoadBooksService);
-  searchService = inject(SearchService);
 
-  constructor() {
-    this.booksList = this.bookService.getBooks();
-  }
+  constructor(
+    private searchService: SearchService,
+    private bookService: LoadBooksService
+  ) {}
+
   ngOnInit(): void {
     this.searchService.search.subscribe((searchResults) => {
       this.booksList = searchResults;
     });
     this.bookService.getAllgenre();
+    this.bookService.books$.subscribe((allBooks) => {
+      this.booksList = allBooks;
+    });
+    this.bookService.getBooks();
   }
 }

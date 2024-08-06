@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Book } from '../interfaces/book.interface';
 import { LoadBooksService } from './load-books.service';
@@ -8,13 +8,16 @@ import { LoadBooksService } from './load-books.service';
 })
 export class SearchService {
   search: Subject<Book[]> = new Subject<Book[]>();
-  bookService = inject(LoadBooksService);
+
+  constructor(private bookService: LoadBooksService) {}
 
   searchFilter(param: string) {
     const books = this.bookService.getBooks();
-    const newbooks = books.filter((book) =>
-      book.name.toLocaleLowerCase().includes(param.toLocaleLowerCase())
-    ) as Book[];
-    this.search.next(newbooks);
+    this.bookService.books$.subscribe((data) => {
+      const newbooks = data.filter((book) =>
+        book.name.toLocaleLowerCase().includes(param.toLocaleLowerCase())
+      ) as Book[];
+      this.search.next(newbooks);
+    });
   }
 }

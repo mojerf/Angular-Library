@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { LoadBooksService } from '../../services/load-books.service';
@@ -28,20 +28,6 @@ import { MatChipsModule } from '@angular/material/chips';
 })
 export class ManageBooksComponent implements OnInit {
   booksList: Book[] = [];
-  bookService: LoadBooksService = inject(LoadBooksService);
-  deleteService = inject(CrudService);
-  searchService = inject(SearchService);
-
-  ngOnInit(): void {
-    this.booksList = this.bookService.getBooks();
-    this.deleteService.bookChanged.subscribe((x) => {
-      this.booksList = x;
-    });
-    this.searchService.search.subscribe((x) => {
-      this.booksList = x;
-    });
-  }
-
   displayedColumns: string[] = [
     'image',
     'name',
@@ -52,7 +38,26 @@ export class ManageBooksComponent implements OnInit {
     'action',
   ];
 
+  constructor(
+    private bookService: LoadBooksService,
+    private crudService: CrudService,
+    private searchService: SearchService
+  ) {}
+
+  ngOnInit(): void {
+    this.crudService.bookChanged.subscribe((x) => {
+      this.booksList = x;
+    });
+    this.searchService.search.subscribe((x) => {
+      this.booksList = x;
+    });
+    this.bookService.books$.subscribe((allBooks) => {
+      this.booksList = allBooks;
+    });
+    this.bookService.getBooks();
+  }
+
   deleteBook(name: string) {
-    this.deleteService.deleteBook(name);
+    this.crudService.deleteBook(name);
   }
 }

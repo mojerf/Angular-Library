@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoadBooksService } from '../../services/load-books.service';
 import { MatChipsModule } from '@angular/material/chips';
 import { RouterLink } from '@angular/router';
@@ -11,7 +11,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './all-genres-container.component.html',
   styleUrl: './all-genres-container.component.scss',
 })
-export class AllGenresContainerComponent {
-  bookService: LoadBooksService = inject(LoadBooksService);
-  allGenre: string[] = this.bookService.getAllgenre();
+export class AllGenresContainerComponent implements OnInit {
+  allGenre: string[] = [];
+
+  constructor(private bookService: LoadBooksService) {}
+
+  ngOnInit(): void {
+    this.allGenre = this.bookService.getAllgenre();
+  }
 }

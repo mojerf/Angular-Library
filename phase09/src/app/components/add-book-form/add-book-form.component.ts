@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
 import {
   FormControl,
@@ -18,8 +18,6 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './add-book-form.component.scss',
 })
 export class AddBookFormComponent {
-  createService = inject(CrudService);
-
   newBookForm = new FormGroup({
     name: new FormControl('', Validators.required),
     image: new FormControl('', Validators.required),
@@ -29,7 +27,7 @@ export class AddBookFormComponent {
     author: new FormControl('', Validators.required),
   });
 
-  constructor() {}
+  constructor(private createService: CrudService) {}
 
   handleSubmit() {
     this.createService.createBook(this.newBookForm);
