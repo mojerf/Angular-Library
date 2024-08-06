@@ -13,6 +13,7 @@ body[data-theme="light"] {
   --card-bg: #fdfbff;
   --black-white: black;
   --author-color: #555;
+  --active-bg-color: #c2eaf2;
   background-color: var(--bg-color);
 }
 
@@ -30,6 +31,7 @@ body[data-theme="dark"] {
   --card-bg: #28292a;
   --black-white: white;
   --author-color: #aaa;
+  --active-bg-color: #005cbb;
   background-color: var(--bg-color);
 }
 .mat-mdc-chip-action-label {

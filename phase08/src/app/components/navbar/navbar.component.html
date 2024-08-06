@@ -1,6 +1,13 @@
 <div class="navbar">
-  <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
-    <span class="nav-icon"><mat-icon matSuffix>home</mat-icon></span>
+  <a
+    routerLink=""
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    ariaCurrentWhenActive="page"
+  >
+    <span class="nav-icon"
+      ><mat-icon matSuffix class="nav-icons">home</mat-icon></span
+    >
     <span class="nav-text" mat-icon-button>Home</span>
   </a>
   <a
@@ -8,8 +15,26 @@
     routerLinkActive="active"
     ariaCurrentWhenActive="page"
   >
-    <span class="nav-icon"><mat-icon matSuffix>edit_square</mat-icon></span>
+    <span class="nav-icon"
+      ><mat-icon matSuffix class="nav-icons">edit_square</mat-icon></span
+    >
     <span class="nav-text" mat-icon-button>Manage</span>
+  </a>
+  <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">
+    <span class="nav-icon">
+      <mat-icon matSuffix class="nav-icons">groups</mat-icon>
+    </span>
+    <span class="nav-text" mat-icon-button>About</span>
+  </a>
+  <a
+    routerLink="/contact"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+  >
+    <span class="nav-icon">
+      <mat-icon matSuffix class="nav-icons">contacts</mat-icon>
+    </span>
+    <span class="nav-text" mat-icon-button>Contact</span>
   </a>
   <div class="bottom-aligned">
     <button mat-icon-button (click)="changeTheme()">
@@ -20,7 +45,7 @@
 
 <div class="top-nav-container">
   <div class="logo-container">
-    <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
+    <a routerLink="" ariaCurrentWhenActive="page">
       <mat-icon class="logo-icon"> menu_book </mat-icon>
     </a>
   </div>
