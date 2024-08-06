@@ -3,7 +3,7 @@
   border: 1px solid #222;
 }
 .details-container {
-  width: 100%;
+  inline-size: 100%;
 }
 
 .grid {
@@ -11,6 +11,6 @@
 }
 
 .book-card {
-  width: 100%;
+  inline-size: 100%;
   flex-direction: row;
 }

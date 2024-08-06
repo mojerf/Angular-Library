@@ -1,42 +1,40 @@
-.demo-table {
-  width: 100%;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  background-color: var(--bg-color);
+.add-btn {
+  padding-padding-block-end: 16px;
 }
 
-.demo-button-container {
-  padding-bottom: 16px;
-}
+.container {
+  &__table {
+    inline-size: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    background-color: var(--bg-color);
+  }
 
-.demo-button + .demo-button {
-  margin-left: 8px;
-}
+  &__img {
+    block-size: 100px;
+    border-radius: 5px;
+    padding: 0.5rem 0;
+  }
 
-img {
-  height: 100px;
-  border-radius: 5px;
-  padding: 0.5rem 0;
-}
+  &__delete {
+    color: #ba1a1a;
+  }
 
-.error-icon {
-  color: #ba1a1a;
-}
-.edit-icon {
-  color: #005cbb;
-}
-mat-icon {
-  cursor: pointer;
-}
-a {
-  text-decoration: none;
-  color: var(--logo-color);
-}
+  &__edit {
+    color: #005cbb;
+  }
 
-tr {
-  color: var(--logo-color);
-}
-.genre-chips {
-  margin: 0 0.1rem;
-  cursor: pointer;
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--logo-color);
+  }
+
+  &__chips {
+    margin: 0 0.1rem;
+    cursor: pointer;
+  }
 }

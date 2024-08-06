@@ -1,5 +1,5 @@
-<h3>Genres</h3>
-<div class="all-genre-container">
+<h3 class="title">Genres</h3>
+<div class="container">
   @for (genre of allGenre ; track genre) {
   <a [routerLink]="['/genre', genre]">
     <mat-chip class="chips">{{ genre }}</mat-chip>

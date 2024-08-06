@@ -1,17 +1,19 @@
-mat-form-field {
-  width: 46%;
-  padding: 1rem;
-}
-.mat-mdc-form-field-subscript-wrapper {
-  padding-bottom: 1rem;
-}
-img {
-  margin: 1rem;
-  border-radius: 12px;
-}
-button {
-  margin: 1rem;
-}
-.hint {
-  color: var(--text-color);
+.form {
+  &__img {
+    padding-inline-start: 1rem;
+    border-radius: 12px;
+  }
+
+  &__field {
+    inline-size: 46%;
+    padding: 1rem;
+  }
+
+  &__hint {
+    color: var(--text-color);
+  }
+
+  &__block {
+    padding-inline: 1rem;
+  }
 }

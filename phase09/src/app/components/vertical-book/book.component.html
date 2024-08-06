@@ -1,11 +1,16 @@
-<mat-card class="book-card" appearance="raised">
-  <a class="image-link" [routerLink]="['/book', bookSpec.name]">
-    <img mat-card-image src="{{ bookSpec.image }}" alt="Photo of a Shiba Inu" />
-    <div class="middle">
-      <div class="text">More info...</div>
+<mat-card class="card" appearance="raised">
+  <a class="card__link" [routerLink]="['/book', bookSpec.name]">
+    <img
+      mat-card-image
+      src="{{ bookSpec.image }}"
+      alt="{{ bookSpec.name }}"
+      class="card__link__img"
+    />
+    <div class="card__link__middle">
+      <div class="card__link__middle__text">More info...</div>
     </div>
   </a>
   <mat-card-content>
-    <book-details [bookDetails]="bookSpec" class="grid" />
+    <book-details [bookDetails]="bookSpec" />
   </mat-card-content>
 </mat-card>

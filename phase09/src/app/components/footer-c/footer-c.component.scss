@@ -1,11 +1,12 @@
-div {
+.contianer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5rem;
+  block-size: 5rem;
   background-color: var(--bg-color);
   color: var(--text-color);
-}
-p {
-  margin: 0;
+
+  &__message {
+    margin: 0;
+  }
 }

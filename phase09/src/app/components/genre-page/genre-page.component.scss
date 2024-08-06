@@ -3,30 +3,27 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+
+  &__book {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    inline-size: 15rem;
+    gap: 1rem;
+  }
 }
-horizontal-book {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  width: 25rem;
-  gap: 1rem;
-}
-vertical-book {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  width: 15rem;
-  gap: 1rem;
-}
-mat-icon {
-  cursor: pointer;
-}
+
 .title {
   display: flex;
   align-items: center;
-  padding-bottom: 1.5rem;
+  padding-padding-block-end: 1.5rem;
   color: var(--black-white);
-}
-h2 {
-  margin: 0;
+
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__text {
+    margin: 0;
+  }
 }

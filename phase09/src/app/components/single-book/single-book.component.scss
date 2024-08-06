@@ -1,66 +1,75 @@
-.book-details-container {
-  width: 100%;
+.book {
+  inline-size: 100%;
   display: flex;
   gap: 2rem;
   box-sizing: border-box;
-}
 
-.book-details-image-container {
-  width: 26%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-  }
-}
-mat-card-header {
-  align-items: center;
-}
-.book-details-detail-container {
-  padding: 1rem;
-  flex-direction: column;
-  background-color: var(--card-bg);
-  color: var(--black-white);
-}
+  &__block1 {
+    inline-size: 26%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.mat-mdc-card-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  box-sizing: border-box;
-  min-height: 52px;
-  padding: 8px;
-}
-mat-card-title {
-  font-size: 3rem;
-  padding-bottom: 1rem;
-}
-.genres {
-  padding-bottom: 1rem;
-  * {
-    margin-right: 0.25rem;
+    &__img {
+      inline-size: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
   }
-}
-.card-container {
-  width: 100%;
-}
-mat-divider {
-  margin: 1rem 0;
-}
-.author {
-  font-size: 1.5rem;
-}
-h2 {
-  margin: 0;
-}
-mat-icon {
-  cursor: pointer;
-}
-a {
-  text-decoration: none;
-  color: var(--text-color);
+
+  &__block2 {
+    inline-size: 100%;
+
+    &__elem1 {
+      padding: 1rem;
+      flex-direction: column;
+      background-color: var(--card-bg);
+      color: var(--black-white);
+
+      &__header {
+        align-items: center;
+
+        &__title {
+          margin: 0;
+        }
+
+        &__link {
+          text-decoration: none;
+          color: var(--text-color);
+
+          &__icon {
+            cursor: pointer;
+          }
+
+          &__author {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      &__divider {
+        margin-block: 1rem;
+      }
+
+      &__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        box-sizing: border-box;
+        min-block-size: 52px;
+        padding: 8px;
+
+        &__genres {
+          padding-padding-block-end: 1rem;
+          display: flex;
+          align-items: center;
+
+          &__block {
+            padding-inline: 0.25rem;
+          }
+        }
+      }
+    }
+  }
 }
