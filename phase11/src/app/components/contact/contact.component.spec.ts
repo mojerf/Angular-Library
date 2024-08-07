@@ -8,9 +8,8 @@ describe('ContactComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContactComponent]
-    })
-    .compileComponents();
+      imports: [ContactComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ContactComponent);
     component = fixture.componentInstance;
@@ -19,5 +18,11 @@ describe('ContactComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`shoul show propper message`, () => {
+    // expect().toBe(component.message);
+    const element: HTMLElement = fixture.nativeElement;
+    expect(element.textContent).toBe(component.message);
   });
 });

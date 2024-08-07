@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AddBookFormComponent } from './add-book-form.component';
 
 describe('AddBookFormComponent', () => {
@@ -8,9 +8,8 @@ describe('AddBookFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddBookFormComponent]
-    })
-    .compileComponents();
+      imports: [AddBookFormComponent, NoopAnimationsModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AddBookFormComponent);
     component = fixture.componentInstance;

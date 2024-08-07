@@ -8,4 +8,5 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {}
+export class ContactComponent {
+  message: string = 'Come to my office ^^';}

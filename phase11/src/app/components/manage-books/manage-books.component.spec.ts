@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ManageBooksComponent } from './manage-books.component';
+import { RouterModule } from '@angular/router';
 
 describe('ManageBooksComponent', () => {
   let component: ManageBooksComponent;
@@ -8,9 +9,8 @@ describe('ManageBooksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManageBooksComponent]
-    })
-    .compileComponents();
+      imports: [ManageBooksComponent, RouterModule.forRoot([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ManageBooksComponent);
     component = fixture.componentInstance;
