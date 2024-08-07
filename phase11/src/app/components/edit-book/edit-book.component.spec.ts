@@ -3,11 +3,12 @@ import { EditBookComponent } from './edit-book.component';
 import { RouterModule } from '@angular/router';
 import { LoadBooksService } from '../../services/load-books.service';
 import { Book } from '../../interfaces/book.interface';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('EditBookComponent', () => {
   let component: EditBookComponent;
   let fixture: ComponentFixture<EditBookComponent>;
-  let bookService = jasmine.createSpyObj(LoadBooksService, ['getBookByName']);
+  let mockBookService: jasmine.SpyObj<LoadBooksService>;
   let fakeBook: Book = {
     name: 'test',
     image: 'http://google.com/image',
@@ -16,22 +17,27 @@ describe('EditBookComponent', () => {
     publishData: '1400',
     price: 200,
   };
-  let loadBooksService;
 
   beforeEach(async () => {
+    mockBookService = jasmine.createSpyObj<LoadBooksService>(['getBookByName']);
+
     await TestBed.configureTestingModule({
-      imports: [EditBookComponent, RouterModule.forRoot([])],
-      providers: [{ provide: LoadBooksService, useValue: bookService }],
+      imports: [
+        EditBookComponent,
+        RouterModule.forRoot([]),
+        NoopAnimationsModule,
+      ],
+      providers: [{ provide: LoadBooksService, useValue: mockBookService }],
     }).compileComponents();
 
-    loadBooksService = TestBed.inject(LoadBooksService);
     fixture = TestBed.createComponent(EditBookComponent);
-    loadBooksService.getBookByName('test');
+    mockBookService.getBookByName.and.returnValue(fakeBook);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(bookService.getBookByName).toHaveBeenCalled();
+    expect(mockBookService.getBookByName).toHaveBeenCalled();
     expect(component).toBeTruthy();
   });
 });

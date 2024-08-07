@@ -12,8 +12,8 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-edit-book',
   standalone: true,
-  providers: [Title],
   imports: [ReactiveFormsModule, MatInputModule, MatButtonModule],
+  providers: [Title],
   templateUrl: './edit-book.component.html',
   styleUrl: './edit-book.component.scss',
 })

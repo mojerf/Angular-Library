@@ -24,13 +24,14 @@ import { Title } from '@angular/platform-browser';
     MatIconModule,
     RouterLink,
   ],
-  providers: [LoadBooksService, Title],
+  providers: [Title],
   templateUrl: './single-book.component.html',
   styleUrl: './single-book.component.scss',
 })
 export class SingleBookComponent implements OnInit {
-  bookName = '';
+  bookName!: string;
   book!: Book;
+
   constructor(
     private location: Location,
     private route: ActivatedRoute,

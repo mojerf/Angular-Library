@@ -7,7 +7,7 @@ import { Book } from '../../interfaces/book.interface';
 describe('SingleBookComponent', () => {
   let component: SingleBookComponent;
   let fixture: ComponentFixture<SingleBookComponent>;
-  let bookService = jasmine.createSpyObj(LoadBooksService, ['getBookByName']);
+  let mockBookService: jasmine.SpyObj<LoadBooksService>;
   let fakeBook: Book = {
     name: 'test',
     image: 'http://google.com/image',
@@ -16,22 +16,23 @@ describe('SingleBookComponent', () => {
     publishData: '1400',
     price: 200,
   };
-  let loadBooksService;
 
   beforeEach(async () => {
+    mockBookService = jasmine.createSpyObj<LoadBooksService>(['getBookByName']);
+
     await TestBed.configureTestingModule({
       imports: [SingleBookComponent, RouterModule.forRoot([])],
-      providers: [{ provide: LoadBooksService, useValue: bookService }],
+      providers: [{ provide: LoadBooksService, useValue: mockBookService }],
     }).compileComponents();
 
-    loadBooksService = TestBed.inject(LoadBooksService);
     fixture = TestBed.createComponent(SingleBookComponent);
-    loadBooksService.getBookByName('test');
+    mockBookService.getBookByName.and.returnValue(fakeBook);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(bookService.getBookByName).toHaveBeenCalled();
+    expect(mockBookService.getBookByName).toHaveBeenCalled();
     expect(component).toBeTruthy();
   });
 });
