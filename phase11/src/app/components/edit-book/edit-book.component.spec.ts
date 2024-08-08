@@ -7,7 +7,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CrudService } from '../../services/crud.service';
 import { By } from '@angular/platform-browser';
 
-fdescribe('EditBookComponent', () => {
+describe('EditBookComponent', () => {
   let component: EditBookComponent;
   let fixture: ComponentFixture<EditBookComponent>;
   let mockBookService: jasmine.SpyObj<LoadBooksService>;
@@ -48,16 +48,18 @@ fdescribe('EditBookComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('form SHOULD initilize WHEN created', () => {
+  it('name input SHOULD render old name WHEN created', () => {
     // Arrange
     mockBookService.getBookByName
       .withArgs(fakeBook.name)
       .and.returnValue(fakeBook);
+
     // Act
     fixture.detectChanges();
     const nameInput = fixture.debugElement.query(
       By.css('[data-testid="name-input"]')
     ).nativeElement;
+
     // Assert
     expect(nameInput.value).toBe(fakeBook.name);
   });

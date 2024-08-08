@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FooterCComponent } from './footer-c.component';
 
 describe('FooterCComponent', () => {
@@ -8,16 +7,15 @@ describe('FooterCComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FooterCComponent]
-    })
-    .compileComponents();
+      imports: [FooterCComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FooterCComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('SHOULD create WHEN ever', () => {
     expect(component).toBeTruthy();
   });
 });
