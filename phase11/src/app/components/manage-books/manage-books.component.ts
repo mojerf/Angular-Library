@@ -10,6 +10,8 @@ import { CrudService } from '../../services/crud.service';
 import { SearchService } from '../../services/search.service';
 import { ErrorContainerComponent } from '../error-container/error-container.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-manage-books',
@@ -41,7 +43,8 @@ export class ManageBooksComponent implements OnInit {
   constructor(
     private bookService: LoadBooksService,
     private crudService: CrudService,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -57,7 +60,14 @@ export class ManageBooksComponent implements OnInit {
     this.bookService.getBooks();
   }
 
-  deleteBook(name: string) {
-    this.crudService.deleteBook(name);
+  openDialog(name: string): void {
+    console.log(name);
+
+    this.dialog.open(DialogBoxComponent, {
+      width: '20rem',
+      enterAnimationDuration: 300,
+      exitAnimationDuration: 300,
+      data: name,
+    });
   }
 }

@@ -17,12 +17,12 @@ describe('MainPageContentComponent', () => {
     publishData: '1400',
     price: 200,
   };
+
   beforeEach(async () => {
     mockBookService = jasmine.createSpyObj<LoadBooksService>([
       'getBooks',
       'getAllgenre',
     ]);
-
     mockBookService.books$ = new Subject<Book[]>();
 
     await TestBed.configureTestingModule({

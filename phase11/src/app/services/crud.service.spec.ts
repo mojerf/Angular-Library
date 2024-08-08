@@ -13,4 +13,10 @@ describe('CrudService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('SHOULD create book WHEN invoked', () => {
+    // Arrange
+    // Act
+    // Assert
+  });
 });
