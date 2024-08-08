@@ -61,8 +61,6 @@ export class ManageBooksComponent implements OnInit {
   }
 
   openDialog(name: string): void {
-    console.log(name);
-
     this.dialog.open(DialogBoxComponent, {
       width: '20rem',
       enterAnimationDuration: 300,

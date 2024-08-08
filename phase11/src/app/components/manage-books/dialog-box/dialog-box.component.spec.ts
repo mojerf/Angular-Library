@@ -5,7 +5,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CrudService } from '../../../services/crud.service';
 import { By } from '@angular/platform-browser';
 
-fdescribe('DialogBoxComponent', () => {
+describe('DialogBoxComponent', () => {
   let component: DialogBoxComponent;
   let fixture: ComponentFixture<DialogBoxComponent>;
   let mockDrudService: jasmine.SpyObj<CrudService>;

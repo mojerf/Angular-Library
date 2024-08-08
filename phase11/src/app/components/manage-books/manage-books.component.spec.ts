@@ -4,8 +4,9 @@ import { RouterModule } from '@angular/router';
 import { LoadBooksService } from '../../services/load-books.service';
 import { Book } from '../../interfaces/book.interface';
 import { Subject } from 'rxjs';
+import { By } from '@angular/platform-browser';
 
-describe('ManageBooksComponent', () => {
+fdescribe('ManageBooksComponent', () => {
   let component: ManageBooksComponent;
   let fixture: ComponentFixture<ManageBooksComponent>;
   let mockBookService: jasmine.SpyObj<LoadBooksService>;
@@ -42,5 +43,24 @@ describe('ManageBooksComponent', () => {
     mockBookService.books$.next([fakeBook, fakeBook]);
     // Assert
     expect(component.booksList).toEqual([fakeBook, fakeBook]);
+  });
+
+  it('SHOULD open dialog box WHEN delete button is clicked', () => {
+    // Arrange
+    spyOn(ManageBooksComponent.prototype, 'openDialog');
+    let bookName = 'test';
+    mockBookService.books$.next([fakeBook]);
+    fixture.detectChanges();
+    const deleteButton = fixture.debugElement.query(
+      By.css('[date-testid="delete-button"]')
+    );
+
+    // Act
+    deleteButton.nativeElement.click(bookName);
+
+    // Assert
+    expect(ManageBooksComponent.prototype.openDialog).toHaveBeenCalledWith(
+      bookName
+    );
   });
 });
