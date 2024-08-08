@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from '../../interfaces/book.interface';
 import { LoadBooksService } from '../../services/load-books.service';
-import { HorizontalBookComponent } from '../horizontal-book/book.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,7 +15,6 @@ import { Title } from '@angular/platform-browser';
   selector: 'app-single-book',
   standalone: true,
   imports: [
-    HorizontalBookComponent,
     MatChipsModule,
     MatCardModule,
     MatButtonModule,

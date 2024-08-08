@@ -20,4 +20,10 @@ describe('MainPageContentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('SHOULD have all books WHEN ever', () => {
+    // Arrange
+    // Act
+    // Assert
+  });
 });

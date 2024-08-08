@@ -1,5 +1,10 @@
 <mat-card class="book-card" appearance="raised">
-  <img mat-card-image src="{{ bookSpec.image }}" alt="Photo of a Shiba Inu" />
+  <img
+    mat-card-image
+    src="{{ bookSpec.image }}"
+    alt="Photo of a Shiba Inu"
+    data-testid="book-image"
+  />
   <mat-card-content>
     <book-details [bookDetails]="bookSpec" class="grid" />
   </mat-card-content>

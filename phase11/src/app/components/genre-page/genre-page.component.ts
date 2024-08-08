@@ -11,7 +11,7 @@ import { Title } from '@angular/platform-browser';
   selector: 'app-genre-page',
   standalone: true,
   imports: [VerticalBookComponent, MatIconModule],
-  providers: [LoadBooksService, Title],
+  providers: [Title],
   templateUrl: './genre-page.component.html',
   styleUrl: './genre-page.component.scss',
 })

@@ -3,6 +3,7 @@ import { SingleBookComponent } from './single-book.component';
 import { RouterModule } from '@angular/router';
 import { LoadBooksService } from '../../services/load-books.service';
 import { Book } from '../../interfaces/book.interface';
+import { By } from '@angular/platform-browser';
 
 describe('SingleBookComponent', () => {
   let component: SingleBookComponent;
@@ -31,8 +32,18 @@ describe('SingleBookComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('SHOULD create WHEN ever', () => {
     expect(mockBookService.getBookByName).toHaveBeenCalled();
     expect(component).toBeTruthy();
+  });
+
+  it('title SHOULD render proper text WHEN ever', () => {
+    // Arrange
+    // Act
+    const title = fixture.debugElement.query(
+      By.css('[data-testid="book-title"]')
+    ).nativeElement;
+    // Assert
+    expect(title.innerText).toBe(`${fakeBook.name} by ${fakeBook.author}`);
   });
 });

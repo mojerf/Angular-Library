@@ -45,7 +45,11 @@
     <span class="side-nav__link__text" mat-icon-button>Contact</span>
   </a>
   <div class="side-nav__element">
-    <button mat-icon-button (click)="changeTheme()">
+    <button
+      mat-icon-button
+      (click)="changeTheme()"
+      data-testid="theme-changer-button"
+    >
       <mat-icon class="side-nav__element__toggle" id="themeChangerIcon"
         >dark_mode</mat-icon
       >

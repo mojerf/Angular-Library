@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar.component';
 import { RouterModule } from '@angular/router';
+import { By } from '@angular/platform-browser';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -21,7 +22,15 @@ describe('NavbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('SHOULD create WHEN ever', () => {
     expect(component).toBeTruthy();
+  });
+
+  fit('theme SHOULD change WHEN button clicked', () => {
+    // Arrange
+    fixture.debugElement.query(By.css('[data-testid="theme-changer-button"]'))
+      .nativeElement;
+    // Act
+    // Assert
   });
 });
