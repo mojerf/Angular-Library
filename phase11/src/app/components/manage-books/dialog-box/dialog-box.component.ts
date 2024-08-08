@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import {
   MatDialogActions,
   MatDialogClose,
@@ -31,6 +31,7 @@ import { CrudService } from '../../../services/crud.service';
         mat-dialog-close
         cdkFocusInitial
         (click)="deleteBook(bookName)"
+        data-testid="delete-button"
       >
         Delete
       </button>
@@ -39,7 +40,7 @@ import { CrudService } from '../../../services/crud.service';
 })
 export class DialogBoxComponent {
   constructor(
-    @Inject(MAT_DIALOG_DATA) public bookName: string,
+    @Inject(MAT_DIALOG_DATA) protected bookName: string,
     private crudService: CrudService
   ) {}
 

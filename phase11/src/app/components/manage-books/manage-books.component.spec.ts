@@ -5,7 +5,7 @@ import { LoadBooksService } from '../../services/load-books.service';
 import { Book } from '../../interfaces/book.interface';
 import { Subject } from 'rxjs';
 
-fdescribe('ManageBooksComponent', () => {
+describe('ManageBooksComponent', () => {
   let component: ManageBooksComponent;
   let fixture: ComponentFixture<ManageBooksComponent>;
   let mockBookService: jasmine.SpyObj<LoadBooksService>;

@@ -1,18 +1,18 @@
 :host {
   .add-btn {
-    padding-block-end: 16px;
+    padding-block-end: 1rem;
   }
 
   .container {
     &__table {
       inline-size: 100%;
       padding: 0.5rem 1rem;
-      border-radius: 12px;
+      border-radius: 0.75rem;
       background-color: var(--bg-color);
 
       &__img {
-        block-size: 100px;
-        border-radius: 5px;
+        block-size: 6.25rem;
+        border-radius: 0.313rem;
         padding: 0.5rem 0;
       }
 
