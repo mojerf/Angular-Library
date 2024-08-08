@@ -1,5 +1,9 @@
 <div class="details">
-  <a class="details__title" [routerLink]="['/book', bookDetails.name]">
+  <a
+    class="details__title"
+    [routerLink]="['/book', bookDetails.name]"
+    data-testid="book-datail-title"
+  >
     {{ bookDetails.name }}
   </a>
   <p class="details__author">{{ bookDetails.author }}</p>

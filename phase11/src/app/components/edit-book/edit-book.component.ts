@@ -8,6 +8,7 @@ import { Book } from '../../interfaces/book.interface';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { Title } from '@angular/platform-browser';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-edit-book',
@@ -26,7 +27,8 @@ export class EditBookComponent implements OnInit {
     private route: ActivatedRoute,
     private crudService: CrudService,
     private bookService: LoadBooksService,
-    private title: Title
+    private title: Title,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -44,6 +46,22 @@ export class EditBookComponent implements OnInit {
   }
 
   handleSubmit() {
-    this.crudService.updateBook(this.bookName, this.newBookForm.value);
+    const editBook = this.crudService.updateBook(
+      this.bookName,
+      this.newBookForm.value
+    );
+    if (editBook) {
+      let message = 'Your book is created :)';
+      this.openSnackBar(message);
+    } else {
+      let message = 'There was a problem with updating the book!';
+      this.openSnackBar(message);
+    }
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message, 'thx', {
+      duration: 5000,
+    });
   }
 }

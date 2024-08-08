@@ -1,7 +1,10 @@
 .form {
-  &__img {
+  &__image-container {
     padding-inline-start: 1rem;
-    border-radius: 12px;
+
+    &__image {
+      border-radius: 12px;
+    }
   }
 
   &__field {

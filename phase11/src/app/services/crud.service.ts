@@ -59,6 +59,7 @@ export class CrudService {
 
     localStorage.setItem('books', JSON.stringify(bookList));
     this.bookChanged.next(bookList);
+    return true;
   }
 
   deleteBook(name: string) {
