@@ -6,7 +6,7 @@ import { Book } from '../../interfaces/book.interface';
 import { Subject } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
-fdescribe('ManageBooksComponent', () => {
+describe('ManageBooksComponent', () => {
   let component: ManageBooksComponent;
   let fixture: ComponentFixture<ManageBooksComponent>;
   let mockBookService: jasmine.SpyObj<LoadBooksService>;
