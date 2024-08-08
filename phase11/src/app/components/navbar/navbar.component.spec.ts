@@ -30,7 +30,7 @@ describe('NavbarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('icon SHOULD change WHEN button clicked', () => {
+  it('icon SHOULD change WHEN button clicked', () => {
     // Arrange
     const themeChangerElement = fixture.debugElement.query(
       By.css('[data-testid="theme-changer-button"]')
@@ -45,7 +45,7 @@ describe('NavbarComponent', () => {
     expect(themeIcon.nativeElement.textContent).toBe('dark_mode');
   });
 
-  fit('theme state SHOULD change WHEN button clicked', () => {
+  it('theme state SHOULD change WHEN button clicked', () => {
     // Arrange
     const themeChangerElement = fixture.debugElement.query(
       By.css('[data-testid="theme-changer-button"]')
