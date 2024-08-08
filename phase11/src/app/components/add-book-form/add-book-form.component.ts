@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
-import {
-  FormControl,
-  FormGroup,
-  RequiredValidator,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'add-book-form',
@@ -27,9 +23,30 @@ export class AddBookFormComponent {
     author: new FormControl('', Validators.required),
   });
 
-  constructor(private createService: CrudService) {}
+  constructor(
+    private createService: CrudService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   handleSubmit() {
-    this.createService.createBook(this.newBookForm);
+    const createBook = this.createService.createBook(this.newBookForm);
+    if (createBook) {
+      let message = 'Your book is created :)';
+      this.openSnackBar(message);
+      this.emptyForm();
+    } else {
+      let message = 'There was a problem while we were creating the book!';
+      this.openSnackBar(message);
+    }
+  }
+
+  emptyForm() {
+    this.newBookForm.reset();
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message, 'thx', {
+      duration: 5000,
+    });
   }
 }

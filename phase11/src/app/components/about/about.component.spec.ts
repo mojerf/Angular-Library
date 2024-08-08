@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';
+import { ɵsetAllowDuplicateNgModuleIdsForTest } from '@angular/core';
+import { STANDARD_DROPDOWN_ADJACENT_POSITIONS } from '@angular/cdk/overlay';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
@@ -16,11 +18,11 @@ describe('AboutComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('SHOULD create WHEN ever', () => {
     expect(component).toBeDefined();
   });
 
-  it('should show propper message', () => {
+  it('SHOULD show propper message WHEN ever', () => {
     const element: HTMLElement = fixture.nativeElement;
     expect(element.textContent).toBe(component.message);
   });

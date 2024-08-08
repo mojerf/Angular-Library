@@ -26,11 +26,19 @@ export class CrudService {
       publishData: data.value.publishData,
       price: data.value.price,
     };
-    const bookList = JSON.parse(localStorage.getItem('books') as string);
+    const bookList: Array<Book> = JSON.parse(
+      localStorage.getItem('books') as string
+    );
+
+    const oldLen = bookList.length;
     bookList.push(mydata);
     localStorage.setItem('books', JSON.stringify(bookList));
-
     this.bookChanged.next(bookList);
+    if (bookList.length === oldLen + 1) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   readBook(name: string) {
@@ -57,7 +65,6 @@ export class CrudService {
     const bookList = JSON.parse(localStorage.getItem('books') as string);
     const updatedBookList = bookList.filter((book: Book) => book.name !== name);
     localStorage.setItem('books', JSON.stringify(updatedBookList));
-
     this.bookChanged.next(updatedBookList);
   }
 }
