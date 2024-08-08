@@ -47,9 +47,9 @@ describe('AddBookFormComponent', () => {
     // Act
     fixture.detectChanges();
     component.emptyForm();
+    fixture.detectChanges();
 
     // Assert
-    fixture.detectChanges();
     expect(component.newBookForm.value.name).toBeFalsy();
   });
 
@@ -60,9 +60,9 @@ describe('AddBookFormComponent', () => {
     // Act
     component.handleSubmit();
     mockCrudService.createBook.and.returnValue(true);
+    fixture.detectChanges();
 
     // Assert
-    fixture.detectChanges();
     expect(AddBookFormComponent.prototype.openSnackBar).toHaveBeenCalled();
   });
 });

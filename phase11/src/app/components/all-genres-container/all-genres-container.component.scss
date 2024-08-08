@@ -1,8 +1,10 @@
-.container {
-  display: flex;
-  gap: 0.25rem;
-  flex-wrap: wrap;
-}
-.title {
-  color: var(--black-white);
+:host {
+  .genre-container {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+  .title {
+    color: var(--black-white);
+  }
 }

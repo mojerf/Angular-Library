@@ -7,7 +7,6 @@ import { RouterLink } from '@angular/router';
   selector: 'app-all-genres-container',
   standalone: true,
   imports: [MatChipsModule, RouterLink],
-  providers: [LoadBooksService],
   templateUrl: './all-genres-container.component.html',
   styleUrl: './all-genres-container.component.scss',
 })
