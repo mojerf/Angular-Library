@@ -10,7 +10,6 @@ import { AllGenresContainerComponent } from '../all-genres-container/all-genres-
 @Component({
   selector: 'app-main-page-content',
   standalone: true,
-  providers: [LoadBooksService],
   imports: [
     VerticalBookComponent,
     AddBookFormComponent,

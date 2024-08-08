@@ -1,4 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  flushMicrotasks,
+  TestBed,
+} from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar.component';
 import { RouterModule } from '@angular/router';
@@ -26,11 +30,32 @@ describe('NavbarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('theme SHOULD change WHEN button clicked', () => {
+  fit('icon SHOULD change WHEN button clicked', () => {
     // Arrange
-    fixture.debugElement.query(By.css('[data-testid="theme-changer-button"]'))
-      .nativeElement;
+    const themeChangerElement = fixture.debugElement.query(
+      By.css('[data-testid="theme-changer-button"]')
+    );
+    const themeIcon = fixture.debugElement.query(By.css('#themeChangerIcon'));
+
     // Act
+    themeChangerElement.nativeElement.click();
+    fixture.detectChanges();
+
     // Assert
+    expect(themeIcon.nativeElement.textContent).toBe('dark_mode');
+  });
+
+  fit('theme state SHOULD change WHEN button clicked', () => {
+    // Arrange
+    const themeChangerElement = fixture.debugElement.query(
+      By.css('[data-testid="theme-changer-button"]')
+    );
+
+    // Act
+    themeChangerElement.nativeElement.click();
+    fixture.detectChanges();
+
+    // Assert
+    expect(component.isLight).toBeTrue();
   });
 });

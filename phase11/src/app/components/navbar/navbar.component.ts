@@ -42,8 +42,8 @@ export class NavbarComponent implements OnInit {
     this.isLight = !this.isLight;
     this.themeService.toggleTheme(this.isLight);
     document.getElementById('themeChangerIcon')!.textContent = this.isLight
-      ? 'light_mode'
-      : 'dark_mode';
+      ? 'dark_mode'
+      : 'light_mode';
   }
 
   search(e: Event) {
