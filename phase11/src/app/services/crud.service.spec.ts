@@ -44,4 +44,13 @@ describe('CrudService', () => {
       fakeBook,
     ]);
   });
+
+  it('SHOULD read boos WHEN called', () => {
+    // Arrange
+    localStorage.setItem('books', JSON.stringify([fakeBook]) as string);
+    // Act
+    const books = service.readBook(fakeBook.name);
+    // Assert
+    expect(books).toEqual(fakeBook);
+  });
 });
