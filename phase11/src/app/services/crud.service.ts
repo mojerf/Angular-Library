@@ -9,19 +9,10 @@ export class CrudService {
   readonly bookChanged: Subject<Book[]> = new Subject<Book[]>();
 
   createBook(data: any) {
-    let genres;
-    if (data.value.genre) {
-      const cleanedString = data.value.genre.trim().endsWith(',')
-        ? data.value.genre.slice(0, -1)
-        : data.value.genre;
-      genres = cleanedString?.split(',');
-    } else {
-      genres = [];
-    }
     const mydata = {
       name: data.value.name,
       image: data.value.image,
-      genre: genres,
+      genre: data.value.genre,
       author: data.value.author,
       publishData: data.value.publishData,
       price: data.value.price,
