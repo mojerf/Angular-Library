@@ -12,11 +12,10 @@ export class SearchService {
   constructor(private bookService: LoadBooksService) {}
 
   searchFilter(param: string) {
-    this.bookService.books$.subscribe((data) => {
-      const newbooks = data.filter((book) =>
-        book.name.toLocaleLowerCase().includes(param.toLocaleLowerCase())
-      ) as Book[];
-      this.search.next(newbooks);
-    });
+    const data = this.bookService.bookSetter();
+    const newbooks = data.filter((book) =>
+      book.name.toLocaleLowerCase().includes(param.toLocaleLowerCase())
+    ) as Book[];
+    this.search.next(newbooks);
   }
 }
