@@ -15,6 +15,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AddBookFormComponent {
   newBookForm!: FormGroup;
+  createBookSuccess: Boolean = false;
+
   private readonly SUCCESS_MESSAGE = 'Your book is created :)';
   private readonly ERROR_MESSAGE =
     'There was a problem while we were creating the book!';
@@ -38,8 +40,11 @@ export class AddBookFormComponent {
   }
 
   handleSubmit() {
-    const createBook = this.createService.createBook(this.newBookForm.value);
-    if (createBook) {
+    this.createBookSuccess = this.createService.createBook(
+      this.newBookForm.value
+    );
+
+    if (this.createBookSuccess) {
       let message = 'Your book is created :)';
       this.openSnackBar(this.SUCCESS_MESSAGE);
       this.emptyForm();
