@@ -9,13 +9,22 @@ export class CrudService {
   readonly bookChanged: Subject<Book[]> = new Subject<Book[]>();
 
   createBook(data: any) {
+    let genres;
+    if (data.genre) {
+      const cleanedString = data.genre.trim().endsWith(',')
+        ? data.genre.slice(0, -1)
+        : data.genre;
+      genres = cleanedString?.split(',');
+    } else {
+      genres = [];
+    }
     const mydata = {
-      name: data.value.name,
-      image: data.value.image,
-      genre: data.value.genre,
-      author: data.value.author,
-      publishData: data.value.publishData,
-      price: data.value.price,
+      name: data.name,
+      image: data.image,
+      genre: genres,
+      author: data.author,
+      publishData: data.publishData,
+      price: data.price,
     };
     const bookList: Array<Book> = JSON.parse(
       localStorage.getItem('books') as string

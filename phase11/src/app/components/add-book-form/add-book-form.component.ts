@@ -29,7 +29,7 @@ export class AddBookFormComponent {
   ) {}
 
   handleSubmit() {
-    const createBook = this.createService.createBook(this.newBookForm);
+    const createBook = this.createService.createBook(this.newBookForm.value);
     if (createBook) {
       let message = 'Your book is created :)';
       this.openSnackBar(message);

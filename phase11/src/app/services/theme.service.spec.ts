@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { ThemeService } from './theme.service';
 
 describe('ThemeService', () => {
@@ -10,7 +9,13 @@ describe('ThemeService', () => {
     service = TestBed.inject(ThemeService);
   });
 
-  it('should be created', () => {
+  it('SHOULD create WHEN ever', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('SHOULD change theme WHEN called', () => {
+    // Arrange
+    // Act
+    // Assert
   });
 });

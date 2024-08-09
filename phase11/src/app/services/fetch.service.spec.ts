@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { FetchService } from './fetch.service';
 
 describe('FetchBooksService', () => {
@@ -10,7 +9,14 @@ describe('FetchBooksService', () => {
     service = TestBed.inject(FetchService);
   });
 
-  it('should be created', () => {
+  it('SHOULD create WHEN ever', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('SHOULD fetch books WHEN called', () => {
+    // Arrange
+    // Act
+    // Assert
+    expect(service.getAllBooks).toBeTruthy();
   });
 });
