@@ -12,7 +12,6 @@ export class SearchService {
   constructor(private bookService: LoadBooksService) {}
 
   searchFilter(param: string) {
-    const books = this.bookService.getBooks();
     this.bookService.books$.subscribe((data) => {
       const newbooks = data.filter((book) =>
         book.name.toLocaleLowerCase().includes(param.toLocaleLowerCase())

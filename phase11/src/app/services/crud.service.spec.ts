@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { CrudService } from './crud.service';
 import { Book } from '../interfaces/book.interface';
 
-let fakeBook: Book = {
+const fakeBook: Book = {
   name: 'test',
   image: 'http://google.com/image',
   genre: ['Horror', 'Science'],
@@ -24,6 +24,7 @@ describe('CrudService', () => {
   });
 
   it('SHOULD create a book WHEN called', () => {
+    //In kar mide ?
     // Arrange
     const newBook = {
       name: 'test',

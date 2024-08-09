@@ -13,4 +13,10 @@ describe('SearchService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('SHOULD filter books WHEN called', () => {
+    // Arrange
+    // Act
+    // Assert
+  });
 });
