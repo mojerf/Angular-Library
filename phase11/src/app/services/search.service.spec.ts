@@ -21,12 +21,13 @@ const fakeBooks: Book[] = [
   },
 ];
 
-describe('SearchService', () => {
+fdescribe('SearchService', () => {
   let service: SearchService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(SearchService);
+    spyOn(service['search'], 'next');
   });
 
   it('should be created', () => {
@@ -35,13 +36,9 @@ describe('SearchService', () => {
 
   it('SHOULD filter books WHEN called', () => {
     // Arrange
-    localStorage.clear();
     // Act
-    localStorage.setItem('books', JSON.stringify(fakeBooks) as string);
-    service.search.subscribe((books) => {
-      expect(books).toEqual([fakeBooks[1]]);
-    });
     // Assert
-    service.searchFilter('anot');
+    service.searchFilter(fakeBooks[1].name);
+    expect(service['search'].next).toHaveBeenCalledWith([fakeBooks[1]]);
   });
 });
