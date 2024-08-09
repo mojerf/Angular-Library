@@ -14,29 +14,38 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './add-book-form.component.scss',
 })
 export class AddBookFormComponent {
-  newBookForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    image: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required),
-    publishData: new FormControl('', Validators.required),
-    genre: new FormControl('', Validators.required),
-    author: new FormControl('', Validators.required),
-  });
+  newBookForm!: FormGroup;
+  private readonly SUCCESS_MESSAGE = 'Your book is created :)';
+  private readonly ERROR_MESSAGE =
+    'There was a problem while we were creating the book!';
 
   constructor(
     private createService: CrudService,
     private _snackBar: MatSnackBar
-  ) {}
+  ) {
+    this.initializeForm();
+  }
+
+  private initializeForm() {
+    this.newBookForm = new FormGroup({
+      name: new FormControl('', Validators.required),
+      image: new FormControl('', Validators.required),
+      price: new FormControl('', Validators.required),
+      publishData: new FormControl('', Validators.required),
+      genre: new FormControl('', Validators.required),
+      author: new FormControl('', Validators.required),
+    });
+  }
 
   handleSubmit() {
     const createBook = this.createService.createBook(this.newBookForm.value);
     if (createBook) {
       let message = 'Your book is created :)';
-      this.openSnackBar(message);
+      this.openSnackBar(this.SUCCESS_MESSAGE);
       this.emptyForm();
     } else {
       let message = 'There was a problem while we were creating the book!';
-      this.openSnackBar(message);
+      this.openSnackBar(this.ERROR_MESSAGE);
     }
   }
 

@@ -50,9 +50,9 @@
       (click)="changeTheme()"
       data-testid="theme-changer-button"
     >
-      <mat-icon class="side-nav__element__toggle" id="themeChangerIcon"
-        >light_mode</mat-icon
-      >
+      <mat-icon class="side-nav__element__toggle" id="themeChangerIcon">{{
+        isLight ? "dark_mode" : "light_mode"
+      }}</mat-icon>
     </button>
   </div>
 </div>

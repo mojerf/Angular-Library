@@ -25,7 +25,7 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class NavbarComponent implements OnInit {
   isLight: boolean = false;
-  searchValue = '';
+  searchValue: string = '';
 
   constructor(
     private themeService: ThemeService,
@@ -41,9 +41,6 @@ export class NavbarComponent implements OnInit {
   changeTheme() {
     this.isLight = !this.isLight;
     this.themeService.toggleTheme(this.isLight);
-    document.getElementById('themeChangerIcon')!.textContent = this.isLight
-      ? 'dark_mode'
-      : 'light_mode';
   }
 
   search(e: Event) {

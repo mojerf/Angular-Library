@@ -19,9 +19,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './edit-book.component.scss',
 })
 export class EditBookComponent implements OnInit {
+  private readonly UPDATE_SUCCESS_MESSAGE = 'Your book is updated :)';
+  private readonly UPDATE_ERROR_MESSAGE =
+    'There was a problem with updating the book!';
+
   bookName!: string;
   book!: Book;
-  newBookForm: any;
+  newBookForm!: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,27 +39,30 @@ export class EditBookComponent implements OnInit {
     this.bookName = this.route.snapshot.params['name'];
     this.title.setTitle(`Library - Editing ${this.bookName}`);
     this.book = this.bookService.getBookByName(this.bookName);
-    this.newBookForm = new FormGroup({
-      name: new FormControl(this.book.name),
-      image: new FormControl(this.book.image),
-      price: new FormControl(this.book.price),
-      publishData: new FormControl(this.book.publishData),
-      genre: new FormControl(this.book.genre),
-      author: new FormControl(this.book.author),
-    });
+
+    if (this.book) {
+      this.newBookForm = new FormGroup({
+        name: new FormControl(this.book.name),
+        image: new FormControl(this.book.image),
+        price: new FormControl(this.book.price),
+        publishData: new FormControl(this.book.publishData),
+        genre: new FormControl(this.book.genre),
+        author: new FormControl(this.book.author),
+      });
+    } else {
+      console.error('Book not found');
+    }
   }
 
   handleSubmit() {
-    const editBook = this.crudService.updateBook(
+    const editSuccess = this.crudService.updateBook(
       this.bookName,
       this.newBookForm.value
     );
-    if (editBook) {
-      let message = 'Your book is created :)';
-      this.openSnackBar(message);
+    if (editSuccess) {
+      this.openSnackBar(this.UPDATE_SUCCESS_MESSAGE);
     } else {
-      let message = 'There was a problem with updating the book!';
-      this.openSnackBar(message);
+      this.openSnackBar(this.UPDATE_ERROR_MESSAGE);
     }
   }
 

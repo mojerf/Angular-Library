@@ -21,7 +21,7 @@ const fakeBooks: Book[] = [
   },
 ];
 
-fdescribe('SearchService', () => {
+describe('SearchService', () => {
   let service: SearchService;
 
   beforeEach(() => {

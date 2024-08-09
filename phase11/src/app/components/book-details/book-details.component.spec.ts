@@ -37,6 +37,7 @@ describe('BookDetailsComponent', () => {
       By.css('[data-testid="book-datail-title"]')
     );
     // Act
+    fixture.detectChanges();
     // Assert
     expect(bookDetailTitle.nativeElement.innerText).toBe(fakeBook.name);
   });

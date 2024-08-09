@@ -16,7 +16,7 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './genre-page.component.scss',
 })
 export class GenrePageComponent implements OnInit {
-  genreName = '';
+  genreName: string = '';
   booksByGenre: Book[] = [];
 
   constructor(
@@ -27,7 +27,7 @@ export class GenrePageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.genreName = this.route.snapshot.params['genre'];
+    this.genreName = this.route.snapshot.params['genre'] || '';
     this.title.setTitle(`Library - ${this.genreName} Genre`);
     this.booksByGenre = this.bookService.getBooksByGenre(this.genreName);
   }

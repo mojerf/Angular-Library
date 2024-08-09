@@ -20,7 +20,7 @@ import { AllGenresContainerComponent } from '../all-genres-container/all-genres-
   styleUrl: './main-page-content.component.scss',
 })
 export class MainPageContentComponent implements OnInit {
-  title = 'Main Page';
+  title: string = 'Main Page';
   booksList: Book[] = [];
 
   constructor(

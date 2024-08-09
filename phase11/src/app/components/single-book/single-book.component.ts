@@ -38,9 +38,9 @@ export class SingleBookComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.bookName = this.route.snapshot.params['name'];
+    this.bookName = this.route.snapshot.params['name'] || '';
     this.title.setTitle(`Library - ${this.bookName}`);
-    this.book = this.bookService.getBookByName(this.bookName);
+    this.book = this.bookService.getBookByName(this.bookName) || ({} as Book);
   }
 
   goBack() {
