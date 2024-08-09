@@ -16,6 +16,10 @@ describe('ThemeService', () => {
   it('SHOULD change theme WHEN called', () => {
     // Arrange
     // Act
+    service.onToggle.subscribe((themeState) => {
+      expect(themeState).toBeTrue();
+    });
     // Assert
+    service.toggleTheme(true);
   });
 });

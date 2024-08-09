@@ -11,14 +11,17 @@ export class ThemeService {
   public toggleTheme(newIsLight: boolean) {
     this.isLight = newIsLight;
 
-    const currentTheme = document.body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    this.setTheme(newTheme);
+    this.setTheme(this.getTheme());
 
     this.onToggle.next(this.isLight);
   }
 
   private setTheme(theme: string) {
     document.body.setAttribute('data-theme', theme);
+  }
+
+  private getTheme() {
+    const currentTheme = document.body.getAttribute('data-theme');
+    return currentTheme === 'dark' ? 'light' : 'dark';
   }
 }
