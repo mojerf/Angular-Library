@@ -16,7 +16,7 @@ This is a frontend application for a book library built using local storage.
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/mojerf/Angular-Library.git](https://github.com/mojerf/Angular-Library.git)
+   git clone https://github.com/mojerf/Angular-Library.git
    ```
 
 2. Install dependencies:
